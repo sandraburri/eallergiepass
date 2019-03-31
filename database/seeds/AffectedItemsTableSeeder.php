@@ -11,14 +11,14 @@ class AffectedItemsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('affectedItems')->insert([
+        DB::table('affected_items')->insert([
             'affected_id' => 1,
             'type' => 'Haselnuss',
             'symptoms' => 'Atemnot',
             'medication' => ''
         ]);
 
-        DB::table('affectedItems')->insert([
+        DB::table('affected_items')->insert([
             'affected_id' => 2,
             'type' => 'Penizillin',
             'symptoms' => 'Hautreizungen',

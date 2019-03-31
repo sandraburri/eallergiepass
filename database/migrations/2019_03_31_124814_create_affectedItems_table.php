@@ -13,7 +13,7 @@ class CreateAffectedItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('affectedItems', function (Blueprint $table) {
+        Schema::create('affected_items', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('affected_id');
             $table->string('type');
@@ -21,7 +21,7 @@ class CreateAffectedItemsTable extends Migration
             $table->boolean('suspicion')->default(false);
             $table->string('symptoms')->nullable();
             $table->string('medication')->nullable();
-            $table->string('emergencyMedication')->nullable();
+            $table->string('emergency_medication')->nullable();
             $table->timestamps();
 
             $table->foreign('affected_id')->references('id')->on('affected');
@@ -35,6 +35,6 @@ class CreateAffectedItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('affectedItems');
+        Schema::dropIfExists('affected_items');
     }
 }

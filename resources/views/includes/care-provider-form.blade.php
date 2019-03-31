@@ -1,6 +1,7 @@
-{{-- 
-    Dies ist für den Arzt, nach dem ersten Login muss er seine Daten erfassen, damit diese später auf dem Allergiepass des
-    Betroffenen ausgewiesen werden können. Dies erfolgt einmalig nach dem ersten Login und ist danach nicht mehr sichtbar!
+{{--
+    This is for the care provider, after the first login he must enter his data,
+    so that these can be shown later on the allergy passport of the affected person.
+    This is done once after the first login and is no longer visible!
 --}}
 
 <form method="POST" action="{{action('CareProviderController@store')}}">
@@ -20,13 +21,13 @@
             <input type="text" class="form-control" name="title" placeholder="Titel">
         </div>
         <div class="form-group col-md-5">
-            <label for="firstName">Vorname</label>
-            <input type="text" class="form-control" name="firstName" placeholder="Vorname">
+            <label for="first_name">Vorname</label>
+            <input type="text" class="form-control" name="first_name" placeholder="Vorname">
         </div>
         <div class="form-group col-md-5">
-            <label for="lastName">Name</label>
-            <input type="text" class="form-control" name="lastName" placeholder="Name">
-        </div>        
+            <label for="last_name">Name</label>
+            <input type="text" class="form-control" name="last_name" placeholder="Name">
+        </div>
     </div>
 
     <div class="form-row">
@@ -42,8 +43,8 @@
             <input type="text" class="form-control" name="street" placeholder="Strasse">
         </div>
         <div class="form-group col-md-6">
-            <label for="streetNumber">Nummer</label>
-            <input type="text" class="form-control" name="streetNumber" placeholder="Nummer">
+            <label for="street_number">Nummer</label>
+            <input type="text" class="form-control" name="street_number" placeholder="Nummer">
         </div>
     </div>
 
@@ -60,12 +61,11 @@
 
     <div class="form-row">
         <div class="form-group col-md-12">
-            <label for="phoneNumber">Telefon</label>
-            <input type="text" class="form-control" name="phoneNumber" placeholder="Telefon">
+            <label for="phone_number">Telefon</label>
+            <input type="text" class="form-control" name="phone_number" placeholder="Telefon">
         </div>
     </div>
 
-    {{-- Muss noch geregelt werden... --}}
     <button type="submit" class="btn btn-default">
         <i class="fa fa-btn fa-plus"></i>Speichern
     </button>

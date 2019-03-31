@@ -6,19 +6,16 @@
 
         @if (!$careProvider || !$careProvider->id) 
             @include('includes.care-provider-form')      
-        @else
-            {{$careProvider->title}} <br/>
-            {{$careProvider->discipline}} <br/>
-
+       
         @endif
 
         @if ($address && $address->id) 
-        {{$address->lastName}} <br/>
-            {{$address->firstName}} <br/>
+        @include('includes.affected-form')
             
         @endif
         
     </div>
+
 </div>
 
 

@@ -4,23 +4,28 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Illuminate\Http\Request;
-use App\CareProvider;
+use App\Affected;
 use App\Address;
+use Carbon\Carbon;
 
-class CareProviderController extends Controller
+class AffectedController extends Controller
 {
+
+    //Hier muss unbedingt noch programmiert werden,
+    //dass das Formular nach dem Speichern auch ausgefüllt bleibt.
+    //Erst nach dem Drucken, darf das Formular wieder leer sein.
+
     public function store(Request $request)
     {
         //dd($request);
 
         $user = Auth::user();
 
-        $careprovider = new CareProvider();
-        $careprovider->user_id = $user->id;
-        $careprovider->name = $request->name;
-        $careprovider->title = $request->title;
-        $careprovider->discipline = $request->discipline;
-        $careprovider->save();
+        $affected = new Affected();
+        $affected->user_id = $user->id;
+        $affected->ahv_number = $request->ahv_number;
+        $affected->birth_date = Carbon::parse($request->birth_date);       
+        $affected->save();
 
         $address = new Address();
         $address->user_id = $user->id;

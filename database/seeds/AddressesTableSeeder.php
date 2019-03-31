@@ -13,14 +13,14 @@ class AddressesTableSeeder extends Seeder
     {
         DB::table('addresses')->insert([
             'user_id' => 3,
-            'lastName' => 'Hugentobler',
-            'firstName' => 'Bernhard'
+            'last_name' => 'Hugentobler',
+            'first_name' => 'Bernhard'
         ]);
 
         DB::table('addresses')->insert([
             'user_id' => 4,
-            'lastName' => 'Tahery',
-            'firstName' => 'Sabrina'
+            'last_name' => 'Tahery',
+            'first_name' => 'Sabrina'
         ]);
     }
 }
