@@ -16,6 +16,8 @@ class CreateCareProvidersTable extends Migration
         Schema::create('care_providers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
+
+            $table->string('name');
             $table->string('title');
             $table->string('discipline');
             $table->timestamps();

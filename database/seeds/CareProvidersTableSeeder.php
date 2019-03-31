@@ -13,12 +13,14 @@ class CareProvidersTableSeeder extends Seeder
     {
         DB::table('care_providers')->insert([
             'user_id' => 3,
+            'name' => 'Klinik um Bern',
             'title' => 'Dr. Med.',
             'discipline' => 'Allgemeine Innere Medizin'
         ]);
 
         DB::table('care_providers')->insert([
             'user_id' => 4,
+            'name' => 'Klinik um Bern',
             'title' => '',
             'discipline' => 'Praktische Ärztin / General Practice'
         ]);
