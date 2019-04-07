@@ -77,7 +77,6 @@
             @yield('content')
         </main>
 
-        {{--
         @php
             $vars = get_defined_vars();
             unset($vars["app"]);
@@ -88,14 +87,17 @@
             }
             dump($vars);
         @endphp
-        --}}
 
         <footer class="footer">
             <div class="container">
-                <span class="text-muted">Place sticky footer content here.</span>
+                <ul>
+                    <li><a href="#">Datenschutzerklärung</a></li>
+                    <li><a href="#">Nutzungsbedingungen</a></li>
+                    <li><a href="#">Impressum</a></li>
+                </ul>
             </div>
         </footer>
-        
+
     </div>
 </body>
 </html>
