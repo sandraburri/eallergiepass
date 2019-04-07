@@ -12,14 +12,14 @@ class CareProvidersTableSeeder extends Seeder
     public function run()
     {
         DB::table('care_providers')->insert([
-            'user_id' => 3,
+            'user_id' => 1,
             'name' => 'Klinik Sonnenschein',
             'title' => 'Dr. Med.',
             'discipline' => 'Allgemeine Innere Medizin'
         ]);
 
         DB::table('care_providers')->insert([
-            'user_id' => 4,
+            'user_id' => 2,
             'name' => 'Klinik Seeblick',
             'title' => '',
             'discipline' => 'Praktische Ärztin'

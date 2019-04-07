@@ -35,12 +35,13 @@ class HomeController extends Controller
         }
 
         $address = Address::where("user_id", $user->id)->first();
-        $affected = Affected::with('user')->get();
+        if (!$address) {
+            $address = new Address();
+        }
 
         return view('home', [
             'careProvider' => $careProvider,
-            'address' => $address,
-            'affected' => $affected
+            'address' => $address
         ]
     );
     }
