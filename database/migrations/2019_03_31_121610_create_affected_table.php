@@ -16,7 +16,7 @@ class CreateAffectedTable extends Migration
         Schema::create('affected', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->string('ahv_number')->nullable();
+            $table->string('ahv_number')->unique();
             $table->date('birth_date')->nullable();
             $table->timestamps();
 
