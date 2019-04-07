@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class AffectedItemsTableSeeder extends Seeder
 {
@@ -14,17 +15,37 @@ class AffectedItemsTableSeeder extends Seeder
         DB::table('affected_items')->insert([
             'affected_id' => 1,
             'type' => 'allergy',
-            'name' => 'Haselnuss',
+            'name' => 'Bienengift',
             'symptoms' => 'Atemnot',
-            'medication' => ''
+            'verification' => Carbon::parse('22.06.2018'),
+            'verified_by' => 'Klinik',
+            'suspicion' => false,
+            'medication' => '',
+            'emergency_medication' => 'Kortison'
+        ]);
+
+        DB::table('affected_items')->insert([
+            'affected_id' => 1,
+            'type' => 'intolerance',
+            'name' => 'Augmentin',
+            'symptoms' => 'Hautrötungen',
+            'verification' => null,
+            'verified_by' => '',
+            'suspicion' => true,
+            'medication' => '',
+            'emergency_medication' => ''
         ]);
 
         DB::table('affected_items')->insert([
             'affected_id' => 2,
-            'type' => 'intolerance',
-            'name' => 'Penizillin',
-            'symptoms' => 'Hautreizungen',
-            'medication' => 'Kortison'
+            'type' => 'incompatibility',
+            'name' => 'Milch',
+            'symptoms' => 'Übelkeit',
+            'verification' => null,
+            'verified_by' => '',
+            'suspicion' => true,
+            'medication' => '3x täglich Antihistaminikum',
+            'emergency_medication' => ''
         ]);
     }
 }

@@ -51,7 +51,7 @@
                 class="form-check-input @if($errors->has($fieldName)) is-invalid @endif"
                 name="{{$fieldName}}"
                 value="1"
-                {{old($fieldName, $item[$fieldName]) ? checked : ''}}
+                {{old($fieldName, $item[$fieldName]) ? 'checked' : ''}}
             />
         </div>
     </td>
