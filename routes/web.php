@@ -20,7 +20,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/care-provider/store', 'CareProviderController@store');
 
-Route::get('/affected/{id}', 'AffectedController@view');
-Route::get('/search', 'AffectedController@search');
+Route::get('/affected/view/{id}', 'AffectedController@view');
+Route::get('/affected/create', 'AffectedController@create');
+Route::get('/affected/search', 'AffectedController@search');
 Route::post('/affected/store', 'AffectedController@store');
+
+
+Route::get('/affectedItems/create', 'AffectedItemsController@create');
 Route::post('/affectedItems/store', 'AffectedItemsController@store');

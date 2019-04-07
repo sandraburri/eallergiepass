@@ -20,7 +20,6 @@
         <b>Fehler</b> Bitte korrigieren Sie die Fehler im Formular.
     </div>
     @endif
-
     <div class="form-row">
 
         @php $fieldName = 'first_name' @endphp
@@ -28,7 +27,7 @@
             <label for="{{$fieldName}}">Vorname</label>
             <input
                 type="text"
-                class="form-control"
+                class="form-control @if($errors->has($fieldName)) is-invalid @endif"
                 name="{{$fieldName}}"
                 value="{{old($fieldName, $address[$fieldName])}}"
                 placeholder="Vorname"
@@ -41,7 +40,7 @@
             <label for="{{$fieldName}}">Name</label>
             <input
                 type="text"
-                class="form-control"
+                class="form-control @if($errors->has($fieldName)) is-invalid @endif"
                 name="{{$fieldName}}"
                 value="{{old($fieldName, $address[$fieldName])}}"
                 placeholder="Name"
@@ -57,7 +56,7 @@
             <label for="{{$fieldName}}">Strasse</label>
             <input
                 type="text"
-                class="form-control"
+                class="form-control @if($errors->has($fieldName)) is-invalid @endif"
                 name="{{$fieldName}}"
                 value="{{old($fieldName, $address[$fieldName])}}"
                 placeholder="Strasse"
@@ -70,7 +69,7 @@
             <label for="{{$fieldName}}">Nummer</label>
             <input
                 type="text"
-                class="form-control"
+                class="form-control @if($errors->has($fieldName)) is-invalid @endif"
                 name="{{$fieldName}}"
                 value="{{old($fieldName, $address[$fieldName])}}"
                 placeholder="Nummer"
@@ -81,12 +80,12 @@
 
     <div class="form-row">
 
-        @php $fieldName = 'city' @endphp
+        @php $fieldName = 'zip' @endphp
         <div class="form-group col-md-6">
             <label for="{{$fieldName}}">PLZ</label>
             <input
                 type="number"
-                class="form-control"
+                class="form-control @if($errors->has($fieldName)) is-invalid @endif"
                 name="{{$fieldName}}"
                 value="{{old($fieldName, $address[$fieldName])}}"
                 placeholder="PLZ"
@@ -99,7 +98,7 @@
             <label for="{{$fieldName}}">Ort</label>
             <input
                 type="text"
-                class="form-control"
+                class="form-control @if($errors->has($fieldName)) is-invalid @endif"
                 name="{{$fieldName}}"
                 value="{{old($fieldName, $address[$fieldName])}}"
                 placeholder="Ort"
@@ -115,7 +114,7 @@
             <label for="{{$fieldName}}">Telefon</label>
             <input
                 type="text"
-                class="form-control"
+                class="form-control @if($errors->has($fieldName)) is-invalid @endif"
                 name="{{$fieldName}}"
                 value="{{old($fieldName, $address[$fieldName])}}"
                 placeholder="Telefon"
@@ -131,7 +130,7 @@
             <label for="{{$fieldName}}">AHV-Nummer</label>
             <input
                 type="text"
-                class="form-control"
+                class="form-control @if($errors->has($fieldName)) is-invalid @endif"
                 name="{{$fieldName}}"
                 value="{{old($fieldName, $affected[$fieldName])}}"
                 placeholder="AHV-Nummer"
@@ -144,7 +143,7 @@
             <label for="{{$fieldName}}">Geburtsdatum</label>
             <input
                 type="text"
-                class="form-control"
+                class="form-control @if($errors->has($fieldName)) is-invalid @endif"
                 name="{{$fieldName}}"
                 value="{{old($fieldName, $affected[$fieldName])}}"
                 placeholder="Geburtsdatum"
@@ -153,7 +152,11 @@
         </div>
     </div>
 
-    <button type="submit" class="btn btn-default">
-        <i class="fa fa-btn fa-plus"></i>Speichern
+    <input type="hidden" name="affected_id" value="{{$affected ? $affected->id : ''}}" />
+    <input type="hidden" name="address_id" value="{{$address ? $address->id : ''}}" />
+
+    <button type="submit" class="btn btn-primary">
+        <i class="fa fa-btn fa-save"></i>
+        Speichern
     </button>
 </form>

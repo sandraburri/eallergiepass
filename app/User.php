@@ -39,6 +39,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $rules = [
+        'name' => 'required',
+        'email' => 'required',
+        'password' => 'required'
+    ];
+
     public function careProviders()
     {
         return $this->hasMany('App\CareProvider');

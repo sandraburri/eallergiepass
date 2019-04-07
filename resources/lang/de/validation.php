@@ -176,6 +176,7 @@ return [
         'phone_number'          => 'Telefon',
         'street'                => 'Strasse',
         'street_number'         => 'Nummer',
+        'zip'                   => 'PLZ',
         'discipline'            => 'Fachrichtung',
         'ahv_number'            => 'AHV-Nr.'
     ],

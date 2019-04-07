@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
+<div class="container-fluid">
+    <div class="col">
         @include('includes.affected-form', [
             "affected" => $affected,
             "address" => $address,
@@ -10,22 +10,40 @@
         ])
     </div>
 
-    <div class="row justify-content-center">
+    <div class="col mt-4">
 
-        <table>
-
+        <table class="table">
         @foreach ($affectedItems as $type => $items)
 
             <tr>
-                <td>
+                <td colspan="7">
                     <h2>{{__($type)}}</h2>
+
+                    <a href="{{action("AffectedItemsController@create", ["type" => $type, "affected_id" => $affected->id])}}">
+                        <i class="fa fa-btn fa-plus"></i>
+                        Hinzufügen
+                    </a>
                 </td>
             </tr>
 
             @if ($items)
+
+                <thead>
+                    <tr>
+                        <th>{{$type == 'allergy' ? "Allergen" : "Typ"}}</th>
+                        <th>Symptome</th>
+                        <th>Nachweis am</th>
+                        <th class="">Nachweis durch</th>
+                        <th>Verdacht auf</th>
+                        <th>Medikation</th>
+                    </tr>
+                </thead>
+
                 @foreach ($items as $item)
                     @include('includes.affectedItems-form', [
-                        "item" => $item
+                        "type" => $type,
+                        "item" => $item,
+                        "verificationBy" => $verificationBy
                     ])
                 @endforeach
             @endif

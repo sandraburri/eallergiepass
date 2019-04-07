@@ -18,7 +18,7 @@ class Affected extends Model
 
     protected $rules = [
         'user_id' => 'required',
-        'ahv_number' => 'required',
-        'birth_date' => 'required'
+        'ahv_number' => 'required|unique',
+        'birth_date' => 'sometimes|required|date'
     ];
 }

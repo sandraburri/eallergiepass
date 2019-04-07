@@ -4,7 +4,7 @@
     This is done once after the first login and is no longer visible!
 --}}
 
-<div class="row justify-content-center">
+<div class="col">
 
     @if ($careProvider->id && $address->id)
     @else
@@ -12,7 +12,7 @@
     <form method="POST" action="{{action('CareProviderController@store')}}">
 
         <div class="form-row">
-        <h2>Leistungserbringer erfassen</h2>
+        <h2>Praxisdaten vervollständigen</h2>
         </div>
 
         @if ($errors->any())
@@ -167,8 +167,9 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-default">
-            <i class="fa fa-btn fa-plus"></i>Speichern
+        <button type="submit" class="btn btn-primary">
+            <i class="fa fa-btn fa-save"></i>
+            Speichern
         </button>
     </form>
 

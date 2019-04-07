@@ -5,15 +5,31 @@ namespace App\Http\Controllers;
 use Auth;
 use Illuminate\Http\Request;
 use App\Affected;
+use App\AffectedItem;
 use App\Address;
 use Carbon\Carbon;
 
 class AffectedItemsController extends Controller
 {
 
-    //Hier muss unbedingt noch programmiert werden,
-    //dass das Formular nach dem Speichern auch ausgefüllt bleibt.
-    //Erst nach dem Drucken, darf das Formular wieder leer sein.
+    public function create(Request $request)
+    {
+        $item = new AffectedItem();
+        $item->affected_id = $request->affected_id;
+        $item->type = $request->type;
+        $item->name = "...";
+        $item->isValid();
+
+        if (!$item->save()) {
+            return redirect()
+                ->action('AffectedController@view', ['id' => $item->affected_id])
+                ->withErrors($item->getErrors())
+                ->withInput();
+        }
+
+        return redirect()
+            ->action('AffectedController@view', ['id' => $item->affected_id]);
+    }
 
     public function store(Request $request)
     {
@@ -24,7 +40,7 @@ class AffectedItemsController extends Controller
         $affected = new Affected();
         $affected->user_id = $user->id;
         $affected->ahv_number = $request->ahv_number;
-        $affected->birth_date = Carbon::parse($request->birth_date);       
+        $affected->birth_date = Carbon::parse($request->birth_date);
         $affected->save();
 
         $address = new Address();
@@ -42,3 +58,4 @@ class AffectedItemsController extends Controller
         return redirect('home');
     }
 }
+

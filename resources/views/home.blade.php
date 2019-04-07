@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
 
     @include('includes.care-provider-form', [
         "careProvider" => $careProvider,
@@ -14,7 +14,7 @@
 
 
     {{--
-    <div class="row justify-content-center">
+    <div class="col">
         <div class="col-md-12">
 
         <ul>
