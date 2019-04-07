@@ -5,10 +5,12 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Watson\Validating\ValidatingTrait;
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use ValidatingTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -36,4 +38,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function careProviders()
+    {
+        return $this->hasMany('App\CareProvider');
+    }
+
+    public function affected()
+    {
+        return $this->hasMany('App\Affected');
+    }
 }

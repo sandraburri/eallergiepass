@@ -3,24 +3,38 @@
 @section('content')
 <div class="container">
 
+    @include('includes.care-provider-form', [
+        "careProvider" => $careProvider,
+        "address" => $address,
+        "errors" => $errors
+    ])
 
-        @if (!$careProvider || !$careProvider->id) 
-            @include('includes.care-provider-form')      
-       
-        @endif
+    @include('includes.search-affected-form', [
+    ])
 
-        @if ($address && $address->id) 
-        @include('includes.affected-form')
-            
-        @endif
 
-        @if ($address && $address->id) 
-        @include('includes.affectedItems-form')
-            
-        @endif
-        
+    {{--
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+
+        <ul>
+        @foreach ($affected as $a)
+            <li>
+            <a href="{{action('AffectedController@view', $a->id)}}">
+            {{$a->user->name}}
+            </a>
+            </li>
+        @endforeach
+        </ul>
+
+        </div>
+    </div>
+    --}}
+
+
 
 </div>
 
 
-@endsection 
+
+@endsection

@@ -19,5 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/care-provider/store', 'CareProviderController@store');
+
+Route::get('/affected/{id}', 'AffectedController@view');
+Route::get('/search', 'AffectedController@search');
 Route::post('/affected/store', 'AffectedController@store');
 Route::post('/affectedItems/store', 'AffectedItemsController@store');

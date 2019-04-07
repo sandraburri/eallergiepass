@@ -17,6 +17,7 @@ class CreateAffectedItemsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('affected_id');
             $table->string('type');
+            $table->string('name');
             $table->date('verification')->nullable();
             $table->boolean('suspicion')->default(false);
             $table->string('symptoms')->nullable();

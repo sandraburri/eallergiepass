@@ -6,72 +6,172 @@
 
 <div class="row justify-content-center">
 
+    @if ($careProvider->id && $address->id)
+    @else
 
-<form method="POST" action="{{action('CareProviderController@store')}}">
+    <form method="POST" action="{{action('CareProviderController@store')}}">
 
-    {{csrf_field()}}
+        <div class="form-row">
+        <h2>Leistungserbringer erfassen</h2>
+        </div>
 
-    <div class="form-row">
-        <div class="form-group col-md-12">
-            <label for="name">Praxis</label>
-            <input type="text" class="form-control" name="name" placeholder="Name der Praxis">
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <b>Fehler</b> Bitte korrigieren Sie die Fehler im Formular.
         </div>
-    </div>
+        @endif
 
-    <div class="form-row">
-        <div class="form-group col-md-2">
-            <label for="title">Titel</label>
-            <input type="text" class="form-control" name="title" placeholder="Titel">
-        </div>
-        <div class="form-group col-md-5">
-            <label for="first_name">Vorname</label>
-            <input type="text" class="form-control" name="first_name" placeholder="Vorname">
-        </div>
-        <div class="form-group col-md-5">
-            <label for="last_name">Name</label>
-            <input type="text" class="form-control" name="last_name" placeholder="Name">
-        </div>
-    </div>
+        {{csrf_field()}}
 
-    <div class="form-row">
-        <div class="form-group col-md-12">
-            <label for="discipline">Fachrichtung</label>
-            <input type="text" class="form-control" name="discipline" placeholder="Fachrichtung">
+        <div class="form-row">
+            @php $fieldName = 'name' @endphp
+            <div class="form-group col-md-12">
+                <label for="{{$fieldName}}">Praxis</label>
+                <input
+                    type="text"
+                    class="form-control @if($errors->has($fieldName)) is-invalid @endif"
+                    name="{{$fieldName}}"
+                    value="{{old($fieldName)}}"
+                    placeholder="Name der Praxis"
+                />
+                <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
+            </div>
         </div>
-    </div>
 
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="street">Strasse</label>
-            <input type="text" class="form-control" name="street" placeholder="Strasse">
-        </div>
-        <div class="form-group col-md-6">
-            <label for="street_number">Nummer</label>
-            <input type="text" class="form-control" name="street_number" placeholder="Nummer">
-        </div>
-    </div>
+        <div class="form-row">
+            @php $fieldName = 'title' @endphp
+            <div class="form-group col-md-2">
+                <label for="{{$fieldName}}">Titel</label>
+                <input
+                    type="text"
+                    class="form-control @if($errors->has($fieldName)) is-invalid @endif"
+                    name="{{$fieldName}}"
+                    value="{{old($fieldName)}}"
+                    placeholder="Titel"
+                />
+                <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
+            </div>
 
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="zip">PLZ</label>
-            <input type="number" class="form-control" name="zip" placeholder="PLZ">
-        </div>
-        <div class="form-group col-md-6">
-            <label for="city">Ort</label>
-            <input type="text" class="form-control" name="city" placeholder="Ort">
-        </div>
-    </div>
+            @php $fieldName = 'first_name' @endphp
+            <div class="form-group col-md-5">
+                <label for="{{$fieldName}}">Vorname</label>
+                <input
+                    type="text"
+                    placeholder="Titel"
+                    class="form-control @if($errors->has($fieldName)) is-invalid @endif"
+                    name="{{$fieldName}}"
+                    value="{{old($fieldName)}}"
+                    placeholder="Vorname"
+                />
+                <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
+            </div>
 
-    <div class="form-row">
-        <div class="form-group col-md-12">
-            <label for="phone_number">Telefon</label>
-            <input type="text" class="form-control" name="phone_number" placeholder="Telefon">
+            @php $fieldName = 'last_name' @endphp
+            <div class="form-group col-md-5">
+                <label for="{{$fieldName}}">Name</label>
+                <input
+                    type="text"
+                    class="form-control @if($errors->has($fieldName)) is-invalid @endif"
+                    name="{{$fieldName}}"
+                    value="{{old($fieldName)}}"
+                    placeholder="Name"
+                />
+                <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
+            </div>
         </div>
-    </div>
 
-    <button type="submit" class="btn btn-default">
-        <i class="fa fa-btn fa-plus"></i>Speichern
-    </button>
-</form> 
+        <div class="form-row">
+            @php $fieldName = 'discipline' @endphp
+            <div class="form-group col-md-12">
+                <label for="{{$fieldName}}">Fachrichtung</label>
+                <input
+                    type="text"
+                    class="form-control @if($errors->has($fieldName)) is-invalid @endif"
+                    name="{{$fieldName}}"
+                    value="{{old($fieldName)}}"
+                    placeholder="Fachrichtung"
+                />
+                <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            @php $fieldName = 'street' @endphp
+            <div class="form-group col-md-6">
+                <label for="{{$fieldName}}">Strasse</label>
+                <input
+                    type="text"
+                    class="form-control @if($errors->has($fieldName)) is-invalid @endif"
+                    name="{{$fieldName}}"
+                    value="{{old($fieldName)}}"
+                    placeholder="Strasse"
+                />
+                <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
+            </div>
+
+            @php $fieldName = 'street_number' @endphp
+            <div class="form-group col-md-6">
+                <label for="{{$fieldName}}">Nummer</label>
+                <input
+                    type="text"
+                    class="form-control @if($errors->has($fieldName)) is-invalid @endif"
+                    name="{{$fieldName}}"
+                    value="{{old($fieldName)}}"
+                    placeholder="Nummer"
+                />
+                <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
+            </div>
+        </div>
+
+        <div class="form-row">
+
+            @php $fieldName = 'zip' @endphp
+            <div class="form-group col-md-6">
+                <label for="{{$fieldName}}">PLZ</label>
+                <input
+                    type="number"
+                    class="form-control @if($errors->has($fieldName)) is-invalid @endif"
+                    name="{{$fieldName}}"
+                    value="{{old($fieldName)}}"
+                    placeholder="PLZ"
+                />
+                <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
+            </div>
+
+            @php $fieldName = 'city' @endphp
+            <div class="form-group col-md-6">
+                <label for="{{$fieldName}}">Ort</label>
+                <input
+                    type="text"
+                    class="form-control @if($errors->has($fieldName)) is-invalid @endif"
+                    name="{{$fieldName}}"
+                    value="{{old($fieldName)}}"
+                    placeholder="Ort"
+                />
+                <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            @php $fieldName = 'phone_number' @endphp
+            <div class="form-group col-md-12">
+                <label for="{{$fieldName}}">Telefon</label>
+                <input
+                    type="text"
+                    class="form-control @if($errors->has($fieldName)) is-invalid @endif"
+                    name="{{$fieldName}}"
+                    value="{{old($fieldName)}}"
+                    placeholder="Telefon"
+                />
+                <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-default">
+            <i class="fa fa-btn fa-plus"></i>Speichern
+        </button>
+    </form>
+
+    @endif
 
 </div>

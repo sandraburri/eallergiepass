@@ -11,13 +11,6 @@ class CareProviderController extends Controller
 {
     public function store(Request $request)
     {
-        //dd($request);
-
-    //Hier muss unbedingt noch programmiert werden,
-    //dass das Formular nach dem Speichern auch ausgefüllt bleibt.
-    //Falls der LE zu einem späteren Zeitpunkt in diesem Formular Korrekturen
-    // vornehmen will, muss er sehen was eingegeben wurde.
-
         $user = Auth::user();
 
         $careprovider = new CareProvider();
@@ -25,7 +18,7 @@ class CareProviderController extends Controller
         $careprovider->name = $request->name;
         $careprovider->title = $request->title;
         $careprovider->discipline = $request->discipline;
-        $careprovider->save();
+        $careprovider->isValid();
 
         $address = new Address();
         $address->user_id = $user->id;
@@ -36,9 +29,35 @@ class CareProviderController extends Controller
         $address->zip = $request->zip;
         $address->city = $request->city;
         $address->phone_number = $request->phone_number;
+        $address->isValid();
 
-        $address->save();
+        $input = $request->toArray();
+        $errors = $careprovider->getErrors()->merge($address->getErrors());
 
-        return redirect('home');
+        if (!$errors->isEmpty()) {
+            return redirect()
+                ->route('home')
+                ->withErrors($errors)
+                ->withInput($input);
+        }
+
+        if (!$careprovider->save()) {
+            return redirect()
+                ->route('home')
+                ->withErrors($errors)
+                ->withInput($input);
+        }
+
+        if (!$address->save()) {
+            return redirect()
+                ->route('home')
+                ->withErrors($errors)
+                ->withInput($input);
+        }
+
+        return redirect()
+            ->route('home')
+            ->withSuccess("Your address was saved successfully.");
+
     }
 }

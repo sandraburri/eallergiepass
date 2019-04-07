@@ -173,5 +173,10 @@ return [
         'time'                  => 'Uhrzeit',
         'available'             => 'verfügbar',
         'size'                  => 'Größe',
+        'phone_number'          => 'Telefon',
+        'street'                => 'Strasse',
+        'street_number'         => 'Nummer',
+        'discipline'            => 'Fachrichtung',
+        'ahv_number'            => 'AHV-Nr.'
     ],
 ];

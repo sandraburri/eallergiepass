@@ -77,6 +77,18 @@
             @yield('content')
         </main>
 
+        {{--
+        @php
+            $vars = get_defined_vars();
+            unset($vars["app"]);
+            foreach (array_keys($vars) as $key) {
+                if (substr($key, 0, 2) === "__") {
+                    unset($vars[$key]);
+                }
+            }
+            dump($vars);
+        @endphp
+        --}}
 
     </div>
 </body>

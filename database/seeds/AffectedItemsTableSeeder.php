@@ -13,14 +13,16 @@ class AffectedItemsTableSeeder extends Seeder
     {
         DB::table('affected_items')->insert([
             'affected_id' => 1,
-            'type' => 'Haselnuss',
+            'type' => 'allergy',
+            'name' => 'Haselnuss',
             'symptoms' => 'Atemnot',
             'medication' => ''
         ]);
 
         DB::table('affected_items')->insert([
             'affected_id' => 2,
-            'type' => 'Penizillin',
+            'type' => 'intolerance',
+            'name' => 'Penizillin',
             'symptoms' => 'Hautreizungen',
             'medication' => 'Kortison'
         ]);
