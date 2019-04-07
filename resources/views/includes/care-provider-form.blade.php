@@ -4,6 +4,9 @@
     This is done once after the first login and is no longer visible!
 --}}
 
+<div class="row justify-content-center">
+
+
 <form method="POST" action="{{action('CareProviderController@store')}}">
 
     {{csrf_field()}}
@@ -70,3 +73,5 @@
         <i class="fa fa-btn fa-plus"></i>Speichern
     </button>
 </form> 
+
+</div>

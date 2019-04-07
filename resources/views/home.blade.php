@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+
 
         @if (!$careProvider || !$careProvider->id) 
             @include('includes.care-provider-form')      
@@ -19,7 +19,6 @@
             
         @endif
         
-    </div>
 
 </div>
 

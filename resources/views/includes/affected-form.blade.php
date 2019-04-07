@@ -4,6 +4,9 @@
         --}}   
 
 
+        <div class="row justify-content-center">
+
+
     <form method="POST" action="{{action('AffectedController@store')}}">
 
 {{csrf_field()}}
@@ -63,3 +66,5 @@
     <i class="fa fa-btn fa-plus"></i>Speichern
 </button>
 </form>
+
+</div>

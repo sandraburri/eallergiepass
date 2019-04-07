@@ -3,6 +3,8 @@
         which are later used for the allergy passport of the person concerned.
         --}}   
 
+        <div class="row justify-content-center">
+
 
     <form method="POST" action="{{action('AffectedItemsController@store')}}">
 
@@ -63,3 +65,5 @@
     <i class="fa fa-btn fa-plus"></i>Speichern
 </button>
 </form>
+
+</div>
