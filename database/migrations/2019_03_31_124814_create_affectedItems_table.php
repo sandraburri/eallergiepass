@@ -19,6 +19,7 @@ class CreateAffectedItemsTable extends Migration
             $table->string('type');
             $table->string('name');
             $table->date('verification')->nullable();
+            $table->string('verified_by')->nullable();
             $table->boolean('suspicion')->default(false);
             $table->string('symptoms')->nullable();
             $table->string('medication')->nullable();
