@@ -13,6 +13,11 @@
         @include('includes.affected-form')
             
         @endif
+
+        @if ($address && $address->id) 
+        @include('includes.affectedItems-form')
+            
+        @endif
         
     </div>
 
