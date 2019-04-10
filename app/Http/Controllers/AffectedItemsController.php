@@ -35,27 +35,9 @@ class AffectedItemsController extends Controller
     {
         //dd($request);
 
-        $user = Auth::user();
-
-        $affected = new Affected();
-        $affected->user_id = $user->id;
-        $affected->ahv_number = $request->ahv_number;
-        $affected->birth_date = Carbon::parse($request->birth_date);
-        $affected->save();
-
-        $address = new Address();
-        $address->user_id = $user->id;
-        $address->first_name = $request->first_name;
-        $address->last_name = $request->last_name;
-        $address->street = $request->street;
-        $address->street_number = $request->street_number;
-        $address->zip = $request->zip;
-        $address->city = $request->city;
-        $address->phone_number = $request->phone_number;
-
-        $address->save();
-
-        return redirect('home');
+        // für Rebecca, hier alles programmieren analog zu CareProviderController
+        // Hier nur Items beachten....
+        // Speichern und Fehler werfen....
     }
 }
 

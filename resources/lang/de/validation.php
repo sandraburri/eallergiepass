@@ -178,6 +178,6 @@ return [
         'street_number'         => 'Nummer',
         'zip'                   => 'PLZ',
         'discipline'            => 'Fachrichtung',
-        'ahv_number'            => 'AHV-Nr.'
+        'ahv_number'            => 'AHV-Nummer'
     ],
 ];

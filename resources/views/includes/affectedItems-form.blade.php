@@ -30,15 +30,22 @@
         />
     </td>
 
-    @php $fieldName = 'verificationBy' @endphp
+   @php 
+   $fieldName = 'verified_by' ;
+   $oldValue = old($fieldName, $item[$fieldName]);
+   @endphp
     <td class="{{$fieldName}}">
         <select
             class="form-control @if($errors->has($fieldName)) is-invalid @endif"
             name="{{$fieldName}}"
         >
+       
         <option value="">Bitte wählen ...</option>
             @foreach ($verificationBy as $value)
-                <option value="{{$value}}">{{$value}}</option>
+                <option
+                    value="{{$value}}"
+                    {{($oldValue == $value) ? 'selected' : ''}}
+                >{{$value}}</option>
             @endforeach
         </select>
     </td>
@@ -63,6 +70,22 @@
             name="{{$fieldName}}"
         >{{old($fieldName, $item[$fieldName])}}</textarea>
     </td>
+
+    @php $fieldName = 'emergency_medication' @endphp
+    <td class="{{$fieldName}}">
+        <textarea
+            class="form-control @if($errors->has($fieldName)) is-invalid @endif"
+            name="{{$fieldName}}"
+        >{{old($fieldName, $item[$fieldName])}}</textarea>
+    </td>
+
+    {{--
+    Bei der Unverträglichkeit sind die Felder Nachgewiesen am und Nachgewiesen durch noch aktiv....
+ --}}
+
+    {{--
+    Was machen die beiden nächsten 'type' und 'id'?
+ --}}
 
     @php $fieldName = 'type' @endphp
     <td class="{{$fieldName}}">
