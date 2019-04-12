@@ -159,4 +159,15 @@
         <i class="fa fa-btn fa-save"></i>
         Speichern
     </button>
+
+    <button type="submit" class="btn btn-primary">
+        <i class="fa fa-btn fa-change"></i>
+        Ändern
+    </button>
+
+    <button type="submit" class="btn btn-primary">
+        <i class="fa fa-btn fa-forward"></i>
+        Weiter
+    </button>
+
 </form>
