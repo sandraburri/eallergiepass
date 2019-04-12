@@ -79,14 +79,6 @@
         >{{old($fieldName, $item[$fieldName])}}</textarea>
     </td>
 
-    {{--
-    Bei der Unverträglichkeit sind die Felder Nachgewiesen am und Nachgewiesen durch noch aktiv....
- --}}
-
-    {{--
-    Was machen die beiden nächsten 'type' und 'id'?
- --}}
-
     @php $fieldName = 'type' @endphp
     <td class="{{$fieldName}}">
         <input

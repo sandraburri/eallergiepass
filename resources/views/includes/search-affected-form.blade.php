@@ -21,12 +21,6 @@
             }
         @endphp
 
-        {{--
-   Wenn die AHV-Nummer gefunden wurde geht es weiter auf die ausgefüllte Seite...name
-   Wenn die AHV-Nummer nicht gefunden wurde, kommt der folgende Block
-   => Die AHV-Nummer Suche soll dann aber nicht mehr angezeigt werden....
---}}
-
         @if ($errors->any())
             @if (AhvNumber::isValid($ahvNumber))
             <div class="alert alert-info">
