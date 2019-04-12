@@ -12,7 +12,7 @@
     <form method="POST" action="{{action('CareProviderController@store')}}">
 
         <div class="form-row">
-        <h2>Praxisdaten vervollständigen</h2>
+        <h2>Praxisdaten erfassen</h2>
         </div>
 
         @if ($errors->any())
