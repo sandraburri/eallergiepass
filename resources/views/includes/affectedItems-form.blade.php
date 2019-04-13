@@ -3,6 +3,8 @@
     which are later used for the allergy passport of the person concerned.
  --}}
 
+
+
 <tr class="align-top">
     @php $fieldName = 'name' @endphp
     <td class="{{$fieldName}}">

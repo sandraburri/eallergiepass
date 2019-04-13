@@ -52,7 +52,6 @@
 
         <button type="submit" class="btn btn-primary">
             <i class="fa fa-btn fa-search"></i>
-            <br/>
             Suchen
         </button>
     </form>

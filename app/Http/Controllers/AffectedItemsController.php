@@ -22,13 +22,13 @@ class AffectedItemsController extends Controller
 
         if (!$item->save()) {
             return redirect()
-                ->action('AffectedController@view', ['id' => $item->affected_id])
+                ->action('AffectedController@items', ['id' => $item->affected_id])
                 ->withErrors($item->getErrors())
                 ->withInput();
         }
 
         return redirect()
-            ->action('AffectedController@view', ['id' => $item->affected_id]);
+            ->action('AffectedController@items', ['id' => $item->affected_id]);
     }
 
     public function store(Request $request)

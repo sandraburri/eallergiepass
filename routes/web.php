@@ -21,6 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/care-provider/store', 'CareProviderController@store');
 
 Route::get('/affected/view/{id}', 'AffectedController@view');
+Route::get('/affected/items/{id}', 'AffectedController@items');
+
 Route::get('/affected/create', 'AffectedController@create');
 Route::get('/affected/search', 'AffectedController@search');
 Route::post('/affected/store', 'AffectedController@store');

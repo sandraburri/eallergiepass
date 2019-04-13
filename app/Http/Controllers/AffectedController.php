@@ -19,6 +19,17 @@ class AffectedController extends Controller
         $affected = Affected::where("id", $id)->first();
         $address = Address::where("user_id", $affected->user_id)->first();
 
+        return view('affected/view', [
+            'affected' => $affected,
+            'address' => $address
+        ]);
+    }
+
+    public function items($id)
+    {
+        $affected = Affected::where("id", $id)->first();
+        $address = Address::where("user_id", $affected->user_id)->first();
+
         $affectedItems = [
             'allergy' => [],
             'intolerance' => [],
@@ -29,7 +40,7 @@ class AffectedController extends Controller
             array_push($affectedItems[$item->type], $item);
         }
 
-        return view('affected/view', [
+        return view('affected/items', [
             'affected' => $affected,
             'affectedItems' => $affectedItems,
             'address' => $address,
@@ -163,6 +174,6 @@ class AffectedController extends Controller
                 ->withInput($input);
         }
 
-        return redirect()->action('AffectedController@view', ['id' => $affected->id]);
+        return redirect()->action('AffectedController@items', ['id' => $affected->id]);
     }
 }
