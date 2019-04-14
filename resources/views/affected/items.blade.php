@@ -4,11 +4,15 @@
 <div class="container-fluid">
     <div class="col">
         <h2>Patient &laquo;{{$address->first_name}} {{$address->last_name}}&raquo; bearbeiten</h2>
-
-        <button type="submit" class="btn btn-primary">
+        
+        <a 
+            href="{{action("PdfController@index", ["id" => $affected->id])}}"
+            class="btn btn-primary"
+            >
             <i class="fa fa-btn fa-print"></i>
             Allergiepass drucken
-        </button>
+        </a>
+        
     </div>
 
     @php

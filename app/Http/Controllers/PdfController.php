@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Auth;
 use App\Affected;
 use App\Address;
 use App\CareProvider;
+
 
 class PdfController extends Controller
 {

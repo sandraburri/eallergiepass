@@ -16,7 +16,7 @@ export default {
     },
 
     async mounted() {
-        let { data } = await this.$axios.$get( `${process.env.NUXT_ENV_API_URL}/api/users/f0227150-5e91-11e9-b48a-fb57e2e4ed32`);
+        let { data } = await this.$axios.$get( `${process.env.NUXT_ENV_API_URL}/api/users/9595cff0-5ec2-11e9-a7f2-1bbd393a20ea`);
         this.title = data.ahv_number;
     },
 
