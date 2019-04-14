@@ -14,7 +14,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -85,14 +85,16 @@
 
 
         @php
-            $vars = get_defined_vars();
-            unset($vars["app"]);
-            foreach (array_keys($vars) as $key) {
-                if (substr($key, 0, 2) === "__") {
-                    unset($vars[$key]);
+            if (false) {
+                $vars = get_defined_vars();
+                unset($vars["app"]);
+                foreach (array_keys($vars) as $key) {
+                    if (substr($key, 0, 2) === "__") {
+                        unset($vars[$key]);
+                    }
                 }
+                dump($vars);
             }
-            dump($vars);
         @endphp
 
         <footer class="footer">
@@ -101,7 +103,7 @@
                     <li><a href="#">Datenschutzerklärung</a></li>
                     <li><a href="#">Nutzungsbedingungen</a></li>
                     <li><a href="#">Impressum</a></li>
-                    
+
                 </ul>
             </div>
         </footer>

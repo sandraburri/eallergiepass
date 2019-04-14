@@ -11,6 +11,17 @@
         </button>
     </div>
 
+    @php
+        $url = 'https://eallergiepass.test/profile/' . $affected->unique_id;
+        $code = '';
+        try {
+            $code = QrCode::size(150)->generate($url);
+        } catch (Exception $e) {
+            $code = $e;
+        }
+    @endphp
+    {!! $code !!}
+
     <div class="col mt-4">
 
         <table class="table">
