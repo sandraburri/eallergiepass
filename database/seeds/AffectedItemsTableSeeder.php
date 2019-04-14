@@ -26,6 +26,18 @@ class AffectedItemsTableSeeder extends Seeder
 
         DB::table('affected_items')->insert([
             'affected_id' => 1,
+            'type' => 'allergy',
+            'name' => 'Wespengift',
+            'symptoms' => 'Atemnot',
+            'verification' => Carbon::parse('22.06.2018'),
+            'verified_by' => 'Klinik',
+            'suspicion' => false,
+            'medication' => '',
+            'emergency_medication' => 'Kortison'
+        ]);
+
+        DB::table('affected_items')->insert([
+            'affected_id' => 1,
             'type' => 'intolerance',
             'name' => 'Augmentin',
             'symptoms' => 'Hautrötungen',

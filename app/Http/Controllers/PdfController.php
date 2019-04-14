@@ -6,7 +6,7 @@ use Auth;
 use App\Affected;
 use App\Address;
 use App\CareProvider;
-
+use App\AffectedItem;
 
 class PdfController extends Controller
 {
@@ -35,9 +35,20 @@ class PdfController extends Controller
         $affected = Affected::where("id", $id)->first();
         $affected->address = Address::where("user_id", $affected->user_id)->first();
 
+        $affectedItems = [
+            'allergy' => [],
+            'intolerance' => [],
+            'incompatibility' => []
+        ];
+        foreach (AffectedItem::where("affected_id", $affected->id)->get() as $item)
+        {
+            array_push($affectedItems[$item->type], $item);
+        }
+
         $data = [
             "affected" => $affected,
-            "careprovider" => $careprovider
+            "careprovider" => $careprovider,
+            "affectedItems" => $affectedItems      
         ];
 
         //dd($data);
