@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Illuminate\Http\Request;
-use App\Affected;
 use App\AffectedItem;
-use App\Address;
 use Carbon\Carbon;
 
 class AffectedItemsController extends Controller
@@ -32,11 +30,47 @@ class AffectedItemsController extends Controller
 
     public function store(Request $request)
     {
-        dd($request);
+        
+        //"_token" => "kfWk8h4ngkRsw6vv7dUFLXnisRrNT9i7QRUGOhJm"
+        //   "name" => "Bienengift"
+        //   "symptoms" => "Atemnot"
+        //   "verification" => "2018-06-22"
+        //   "verified_by" => "Klinik"
+        //   "medication" => null
+        //   "emergency_medication" => "Kortison"
+        //   "type" => "allergy"
+        //   "id" => "1"
+        //   "submit" => null
+        $user = Auth::user();
 
-        // für Rebecca, hier alles programmieren analog zu CareProviderController
-        // Hier nur Items beachten....
-        // Speichern und Fehler werfen....
+        $item = AffectedItem::where("id", $request->id)->first();
+        if (!$item) {
+            return redirect()
+                ->back()
+                ->withErrors(["id" => "Id nicht gefunden"])
+                ->withInput();
+        }
+
+
+        $item->name = $request->name;
+        $item->verification = Carbon::parse($request->verification);
+        $item->verified_by = $request->verified_by;
+        $item->suspicion = $request->suspicion?1:0;
+        $item->symptoms = $request->symptoms;
+        $item->medication = $request->medication;
+        $item->emergency_medication = $request->emergency_medication;
+        $item->isValid();
+
+        $input = $request->toArray();
+
+
+        if (!$item->save()) {
+            return redirect()
+                ->action('AffectedController@items', ['id' => $item->affected_id])
+                ->withInput($input);
+        }
+
+        return redirect()
+            ->action('AffectedController@items', ['id' => $item->affected_id]);
     }
 }
-
