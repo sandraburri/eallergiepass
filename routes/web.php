@@ -31,3 +31,6 @@ Route::post('/affected/store', 'AffectedController@store');
 Route::get('/affectedItems/create', 'AffectedItemsController@create');
 Route::post('/affectedItems/store', 'AffectedItemsController@store');
 Route::get('/affectedItems/delete', 'AffectedItemsController@delete');
+
+Route::get('/pdf/{id}', 'PdfController@index');
+Route::get('/pdf/html/{id}', 'PdfController@html');
