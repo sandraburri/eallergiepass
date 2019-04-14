@@ -82,6 +82,7 @@ class AffectedController extends Controller
 
         $affected = new Affected();
         $affected->user_id = $user->id;
+        $affected->unique_id = $userId;
         $affected->ahv_number = $ahv_number;
         $affected->save();
 

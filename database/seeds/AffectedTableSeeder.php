@@ -14,12 +14,14 @@ class AffectedTableSeeder extends Seeder
     {
         DB::table('affected')->insert([
             'user_id' => 3,
+            'unique_id' => Uuid::generate(),
             'ahv_number' => '756.1234.1234.12',
             'birth_date' => Carbon::parse('28.09.1974')
         ]);
 
         DB::table('affected')->insert([
             'user_id' => 4,
+            'unique_id' => Uuid::generate(),
             'ahv_number' => '756.4321.4321.43',
             'birth_date' => Carbon::parse('24.08.1996')
         ]);
