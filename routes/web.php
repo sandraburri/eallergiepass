@@ -30,3 +30,4 @@ Route::post('/affected/store', 'AffectedController@store');
 
 Route::get('/affectedItems/create', 'AffectedItemsController@create');
 Route::post('/affectedItems/store', 'AffectedItemsController@store');
+Route::get('/affectedItems/delete', 'AffectedItemsController@delete');

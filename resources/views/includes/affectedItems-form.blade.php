@@ -73,10 +73,14 @@
                 Speichern
             </button>
 
-            <button type="submit" class="btn btn-default text-danger" name="delete">
+            <a 
+                href="{{action("AffectedItemsController@delete", ["id" => $item->id])}}"
+                class="btn btn-default text-danger" 
+            >
                 <i class="fa fa-btn fa-trash"></i>
                 Löschen
-            </button>
+            </a>
+
         </td>
     </tr>
 

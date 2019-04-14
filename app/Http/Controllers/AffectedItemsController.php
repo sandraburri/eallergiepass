@@ -73,4 +73,24 @@ class AffectedItemsController extends Controller
         return redirect()
             ->action('AffectedController@items', ['id' => $item->affected_id]);
     }
+
+    public function delete(Request $request)
+    {
+    
+        $item = AffectedItem::where("id", $request->id)->first();
+        if (!$item) {
+            return redirect()
+                ->back()
+                ->withErrors(["id" => "Id nicht gefunden"])
+                ->withInput();
+        }
+
+
+
+    $item->delete();
+            
+
+        return redirect()
+            ->action('AffectedController@items', ['id' => $item->affected_id]);
+    }
 }
