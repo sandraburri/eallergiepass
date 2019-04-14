@@ -18,5 +18,6 @@
         "*.exe",
         "\\node_modules\\",
         "\\vendor\\"
-    ]
+    ],
+    "php.suggest.basic": false,
 }
