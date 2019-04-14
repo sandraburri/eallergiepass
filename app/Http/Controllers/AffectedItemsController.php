@@ -17,7 +17,6 @@ class AffectedItemsController extends Controller
         $item = new AffectedItem();
         $item->affected_id = $request->affected_id;
         $item->type = $request->type;
-        $item->name = "...";
         $item->isValid();
 
         if (!$item->save()) {
@@ -33,7 +32,7 @@ class AffectedItemsController extends Controller
 
     public function store(Request $request)
     {
-        //dd($request);
+        dd($request);
 
         // für Rebecca, hier alles programmieren analog zu CareProviderController
         // Hier nur Items beachten....

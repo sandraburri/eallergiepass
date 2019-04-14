@@ -13,7 +13,6 @@ class AffectedItem extends Model
 
     protected $rules = [
         'affected_id' => 'required',
-        'type'        => 'required',
-        'name'        => 'required'
+        'type'        => 'required'
     ];
 }

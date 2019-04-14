@@ -17,7 +17,7 @@ class CreateAffectedItemsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('affected_id');
             $table->string('type');
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->date('verification')->nullable();
             $table->string('verified_by')->nullable();
             $table->boolean('suspicion')->default(false);

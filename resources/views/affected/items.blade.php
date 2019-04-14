@@ -3,7 +3,12 @@
 @section('content')
 <div class="container-fluid">
     <div class="col">
-       <h2>Patient &laquo;{{$address->first_name}} {{$address->last_name}}&raquo; bearbeiten</h2>
+        <h2>Patient &laquo;{{$address->first_name}} {{$address->last_name}}&raquo; bearbeiten</h2>
+
+        <button type="submit" class="btn btn-primary">
+            <i class="fa fa-btn fa-print"></i>
+            Allergiepass drucken
+        </button>
     </div>
 
     <div class="col mt-4">
@@ -40,9 +45,9 @@
 
             @foreach ($items as $item)
             @include('includes.affectedItems-form', [
-            "type" => $type,
-            "item" => $item,
-            "verificationBy" => $verificationBy
+                "type" => $type,
+                "item" => $item,
+                "verificationBy" => $verificationBy
             ])
             @endforeach
             @endif
