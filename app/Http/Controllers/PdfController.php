@@ -3,21 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 use App\Affected;
 use App\Address;
+use App\CareProvider;
 
 class PdfController extends Controller
 {
     public function index($id) {
-
-        $affected = Affected::where("id", $id)->first();
-        $address = Address::where("user_id", $affected->user_id)->first();
-
-        $data = [
-            "blubb" => "test",
-            "affected" => $affected,
-            "address" => $address
-        ];
+        $data = $this->getData($id);
 
         view()->share($data);
         $pdf = \Barryvdh\DomPDF\Facade::loadview('pdf\view');
@@ -27,17 +21,28 @@ class PdfController extends Controller
     }
 
     public function html($id) {
-
-        $affected = Affected::where("id", $id)->first();
-        $address = Address::where("user_id", $affected->user_id)->first();
-
-        $data = [
-            "blubb" => "test",
-            "affected" => $affected,
-            "address" => $address
-        ];
+        $data = $this->getData($id);
 
         return view('pdf/view', $data);
+    }
+
+    public function getData($id) {
+        $user = Auth::user();
+        
+        $careprovider = CareProvider::where("user_id", $user->id)->first();
+        $careprovider->address = Address::where("user_id", $careprovider->user_id)->first();
+
+        $affected = Affected::where("id", $id)->first();
+        $affected->address = Address::where("user_id", $affected->user_id)->first();
+
+        $data = [
+            "affected" => $affected,
+            "careprovider" => $careprovider
+        ];
+
+        //dd($data);
+
+        return $data;
     }
 }
 

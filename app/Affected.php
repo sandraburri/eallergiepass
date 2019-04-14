@@ -16,6 +16,11 @@ class Affected extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function address()
+    {
+        return $this->hasOneThrough('App\User', 'App\Address');
+    }
+
     protected $rules = [
         'user_id' => 'required',
         'ahv_number' => 'required|unique',
