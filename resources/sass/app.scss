@@ -9,11 +9,15 @@
 @import '~bootstrap/scss/bootstrap';
 
 .navbar-laravel {
-    background-color: lightgreen;
+    background-color: #8DCB1F;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 
     .navbar-brand img {
         height: 30px;
+    }
+
+    .nav-link {
+        color: #fff;
     }
 }
 

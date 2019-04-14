@@ -12,7 +12,7 @@
     </div>
 
     @php
-        $url = 'https://eallergiepass.test/profile/' . $affected->unique_id;
+        $url = config('eallergiepass.url') . '/profile/' . $affected->unique_id;
         $code = '';
         try {
             $code = QrCode::size(150)->generate($url);
