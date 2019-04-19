@@ -40,8 +40,19 @@ export default {
         'bootstrap-vue/nuxt',
         '@nuxtjs/pwa',
         '@nuxtjs/proxy',
-        '@nuxtjs/dotenv'
+        '@nuxtjs/dotenv',
+        'nuxt-fontawesome'
     ],
+
+    fontawesome: {
+        component: 'fa',
+        imports: [
+            {
+                set: '@fortawesome/free-solid-svg-icons',
+                icons: ['fas']
+            }
+        ]
+    },
 
     axios: {
         // See https://github.com/nuxt-community/axios-module#options
