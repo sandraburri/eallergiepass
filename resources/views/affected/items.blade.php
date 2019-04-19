@@ -15,7 +15,6 @@
         
     </div>
 
-    {{-- This section displays the QR code to the LE. Currently hidden.
         @php
         $url = config('eallergiepass.url') . '/profile/' . $affected->unique_id;
         $code = '';
@@ -26,8 +25,7 @@
         }
     @endphp
     {!! $code !!}
-    --}}
-
+ 
     <div class="col mt-4">
 
         <table class="table">
