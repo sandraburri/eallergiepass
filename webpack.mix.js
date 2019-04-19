@@ -1,8 +1,8 @@
 const mix = require('laravel-mix');
 require('laravel-mix-copy-watched');
 
-//mix.js('resources/js/app.js', 'public/js')
-//mix.sass('resources/sass/app.scss', 'public/css');
+mix.js('resources/js/app.js', 'public/js')
+mix.sass('resources/sass/app.scss', 'public/css');
 
 mix.copyWatched('spa/dist/.nojekyll', 'public/.nojekyll')
 mix.copyWatched('spa/dist/200.html', 'public/200.html')

@@ -13,8 +13,7 @@ class PdfController extends Controller
     public function index($id) {
         $data = $this->getData($id);
 
-        view()->share($data);
-        $pdf = \Barryvdh\DomPDF\Facade::loadview('pdf\view');
+        $pdf = \PDF::loadview('pdf.view', $data);
         $pdf->setPaper('a4', 'landscape');
 
         return $pdf->stream('slip_out.pdf');
@@ -23,32 +22,33 @@ class PdfController extends Controller
     public function html($id) {
         $data = $this->getData($id);
 
-        return view('pdf/view', $data);
+        return view('pdf.view', $data);
     }
 
     public function getData($id) {
         $user = Auth::user();
-        
+
         $careprovider = CareProvider::where("user_id", $user->id)->first();
-        $careprovider->address = Address::where("user_id", $careprovider->user_id)->first();
+        $careprovider->address = $careprovider->user->address;
 
         $affected = Affected::where("id", $id)->first();
-        $affected->address = Address::where("user_id", $affected->user_id)->first();
+        $affected->address = $affected->user->address;
 
         $affectedItems = [
             'allergy' => [],
             'intolerance' => [],
             'incompatibility' => []
         ];
+
         foreach (AffectedItem::where("affected_id", $affected->id)->get() as $item)
         {
-            array_push($affectedItems[$item->type], $item);
+            $affectedItems[$item->type][] = $item;
         }
 
         $data = [
             "affected" => $affected,
             "careprovider" => $careprovider,
-            "affectedItems" => $affectedItems      
+            "affectedItems" => $affectedItems
         ];
 
         //dd($data);

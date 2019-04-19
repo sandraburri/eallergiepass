@@ -64,7 +64,7 @@ $inner_style = "$align_top; width: " . $inner_width ."px; $border_right; padding
                         {{$affected->address->street_number}}<br />
                         {{$affected->address->zip}}
                         {{$affected->address->city}}<br />
-                        {{\Carbon\Carbon::parse($affected->birth_date)->format('d.m.Y')}}<br />
+                        {{$affected->birth_date->format('d.m.Y')}}<br />
                         {{$affected->ahv_number}}
                     </div>
                 </td>
@@ -96,7 +96,7 @@ $inner_style = "$align_top; width: " . $inner_width ."px; $border_right; padding
                                     <td style="{{$inner_style}}; font-size: 9px;">
                                         {{$item->symptoms}}</td>
                                     <td style="{{$inner_style}}; font-size: 9px;">
-                                        {{$item->verification}}</td>
+                                        {{optional($item->verification)->format('d.m.Y')}}</td>
                                     <td style="{{$inner_style}}; font-size: 9px;">
                                         {{$item->suspicion ? "Ja" : ""}}</td>
                                     <td style="{{$inner_style}}; font-size: 9px;">
@@ -104,7 +104,7 @@ $inner_style = "$align_top; width: " . $inner_width ."px; $border_right; padding
                                     <td style="{{$inner_style}}; font-size: 9px;">
                                         {{$item->emergency_medication}}</td>
                                 </tr>
-                            
+
                                 @endforeach
                             @endif
                         @endforeach
@@ -119,11 +119,11 @@ $inner_style = "$align_top; width: " . $inner_width ."px; $border_right; padding
                         $url = config('eallergiepass.url') . '/profile/' . $affected->unique_id;
                         $code = '';
                         try {
-                        $size = 150;
-                        $code = QrCode::size($size)->format('png')->generate($url);
-                        $code = '<img style="width:'.$size.'px" src="data:image/png;base64, ' . base64_encode($code) . '" />';
+                            $size = 150;
+                            $code = QrCode::size($size)->format('png')->generate($url);
+                            $code = '<img style="width:'.$size.'px" src="data:image/png;base64, ' . base64_encode($code) . '" />';
                         } catch (Exception $e) {
-                        $code = $e;
+                            $code = $e;
                         }
                         @endphp
                         {!! $code !!}
