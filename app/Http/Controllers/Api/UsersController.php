@@ -8,7 +8,7 @@ use App\AffectedItem;
 
 class UsersController extends \App\Http\Controllers\Controller
 {
-    public function index(Request $request) 
+    public function index(Request $request)
     {
         $id = $request->id;
 
@@ -18,6 +18,10 @@ class UsersController extends \App\Http\Controllers\Controller
         }
 
         $address = $affected->user->address;
+        if (!$address) {
+            abort(404, "Affected.Address not found.");
+        }
+
         $jsonAffected = [
             "ahv_number" => $affected->ahv_number,
             "birth_date" => $affected->birth_date->format("d.m.Y"),
@@ -29,7 +33,7 @@ class UsersController extends \App\Http\Controllers\Controller
             "zip" => $address->zip,
             "city" => $address->city
         ];
-        
+
         $jsonAffectedItems = [
             'allergy' => [],
             'intolerance' => [],
@@ -50,9 +54,16 @@ class UsersController extends \App\Http\Controllers\Controller
 
             $jsonAffectedItems[$item->type][] = $jsonAffectedItem;
         }
-        
+
         $careProvider = $affected->careProvider;
+        if (!$careProvider) {
+            abort(404, "CareProvider not found.");
+        }
+
         $address = $careProvider->user->address;
+        if (!$address) {
+            abort(404, "CareProvider.Address not found.");
+        }
 
         $jsonCareProvider = [
             "title" => $careProvider->title,
