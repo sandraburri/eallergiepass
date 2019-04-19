@@ -1,115 +1,138 @@
 <template>
     <section class="container-fluid">
 
-        <ul class="list-group">
-
-        <p class = "mb-0">        
-            <li
-                v-for="(user, key) in users"
-                v-bind:key="key"
-                class="list-group-item list-group-item-action"
-            >
-                <nuxt-link :to="'/view/' + key">
-                    {{key}}
-                    <span class="float-left">
-                        <i class="material-icons">person</i>
-                    </span>
-                </nuxt-link>
+        <div>
+             <h3>Notfallinformationen von</h3>
+            <ul class="list-group">
+                <li
+                    v-for="(user, key) in users"
+                    v-bind:key="key"
+                    class="list-group-item list-group-item-action"
+                >
+                    <nuxt-link :to="'/view/' + key">
+                        {{user.affected.first_name}}         
+                        {{user.affected.last_name}}
+                        <span class="float-left">
+                            <i class="material-icons">person</i>
+                        </span>
+                    </nuxt-link>
                 </li>
-            <li 
-                <nuxt-link to="/add/scan" class="btn btn-outline">
-                <i class="fa fa-plus"></i> 
-        </nuxt-link> </li>
-        Weiteres Profil hinzufügen
-            </li>
-        </p>
-             
-     <p class = "mb-0">  
-     <d class ="d" >
-           Notfallkontakt </d>
-      
-     <li class="list-group-item list-group-item-action ">
-    Erika Müller
-      <span class="float-left">
-      <i class="material-icons">person</i>
-                    </span>
-  </li>
-                      
-        
-        
-          <li class="list-group-item">
-          <c class="c">  
-          Notfallanleitung </c>
-        <span class="float-left">
-                        <i class="material-icons"> error </i>
-                    </span>
-                    </li>
-            </p>
 
- <p class = "mb-0">  
-  <d class ="d" >
-        Informationen </d>
+                <li>
+                    <nuxt-link to="/add/scan" class="btn btn-outline">
+                        <i class="fa fa-plus"></i> 
+                        Weiteres Profil hinzufügen
+                    </nuxt-link>
+                </li>
+            </ul>
+        </div>
 
-         <li class="list-group-item">aha! Allergiezentrum Schweiz
-        <span class="float-right">
-                        <i class="material-icons"> call_made </i>
-                    </span>
-                    </li>
-         </p>
+        <div>
+            <h3>Notfallkontakt</h3>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action">
+                    <nuxt-link to="/emergency/contact">
+                        Erika Müller
+                        <span class="float-left">
+                            <i class="material-icons">person</i>
+                        </span>
+                    </nuxt-link>
+                </li>
+            </ul>
+        </div>
 
-<p class = "mb-0">  
- <d class ="d" >
-        Ratgeber </d>
-         
-        <li class="list-group-item"> 
-        <c class ="c" > Allergien </c>
-        <span class="float-left">
-                        <i class="material-icons"> library_books </i>
-                    </span>
-        <span class="float-right">
-                        <i class="material-icons"> keyboard_arrow_right </i>
-                    </span>            
-                    </li>
-         <li class="list-group-item">
-         <c class ="c" > Asthma </c>
-        <span class="float-left">
-                        <i class="material-icons"> library_books </i>
-                    </span>
-        <span class="float-right">
-                        <i class="material-icons"> keyboard_arrow_right </i>
-                    </span>            
-                    </li>
-         <li class="list-group-item">
-         <c class ="c" > Ekzem / Hautreaktionen </c>
-        <span class="float-left">
-                        <i class="material-icons"> library_books </i>
-                    </span>
-        <span class="float-right">
-                        <i class="material-icons"> keyboard_arrow_right </i>
-                    </span>            
-                    </li>
-                     <li class="list-group-item">
-         <c class ="c" > Intoleranzen </c>
-        <span class="float-left">
-                        <i class="material-icons"> library_books </i>
-                    </span>
-        <span class="float-right">
-                        <i class="material-icons"> keyboard_arrow_right </i>
-                    </span>            
-                    </li>
-                     <li class="list-group-item">
-                     <c class ="c" > Wissenswertes </c>
-        <span class="float-left">
-                        <i class="material-icons"> library_books </i>
-                    </span>
-        <span class="float-right">
-                        <i class="material-icons"> keyboard_arrow_right </i>
-                    </span>            
-                    </li>
-       
-</p>
-    
-     </ul>
+        <div class="mt-2">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action">
+                    <nuxt-link to="/emergency/help">
+                        Notfallanleitung
+                        <span class="float-left">
+                            <i class="material-icons"> error </i>
+                        </span>
+                    </nuxt-link>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Informationen</h3>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action">
+                    <nuxt-link to="">
+                        aha! Allergiezentrum Schweiz
+                        <span class="float-right">
+                             <i class="material-icons"> call_made </i>
+                        </span>
+                    </nuxt-link>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Ratgeber</h3>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action">
+                    <nuxt-link to=""> 
+                        Allergien 
+                        <span class="float-left">
+                            <i class="material-icons"> library_books </i>
+                        </span>
+                        <span class="float-right">
+                            <i class="material-icons"> keyboard_arrow_right </i>
+                        </span> 
+                    </nuxt-link>         
+                </li>
+
+                <li class="list-group-item list-group-item-action">
+                    <nuxt-link to=""> 
+                        Asthma 
+                        <span class="float-left">
+                            <i class="material-icons"> library_books </i>
+                        </span>
+                        <span class="float-right">
+                            <i class="material-icons"> keyboard_arrow_right </i>
+                        </span> 
+                    </nuxt-link>         
+                </li>
+
+                <li class="list-group-item list-group-item-action">
+                    <nuxt-link to=""> 
+                        Ekzem / Hautreaktionen
+                        <span class="float-left">
+                            <i class="material-icons"> library_books </i>
+                        </span>
+                        <span class="float-right">
+                            <i class="material-icons"> keyboard_arrow_right </i>
+                        </span> 
+                    </nuxt-link>         
+                </li>
+
+                <li class="list-group-item list-group-item-action">
+                    <nuxt-link to=""> 
+                        Intoleranzen
+                        <span class="float-left">
+                            <i class="material-icons"> library_books </i>
+                        </span>
+                        <span class="float-right">
+                            <i class="material-icons"> keyboard_arrow_right </i>
+                        </span> 
+                    </nuxt-link>         
+                </li>
+                
+                <li class="list-group-item list-group-item-action">
+                    <nuxt-link to=""> 
+                        Wissenswertes
+                        <span class="float-left">
+                            <i class="material-icons"> library_books </i>
+                        </span>
+                        <span class="float-right">
+                            <i class="material-icons"> keyboard_arrow_right </i>
+                        </span> 
+                    </nuxt-link>         
+                </li>
+
+            </ul>
+        </div>
            
     </section>
 
@@ -154,16 +177,9 @@ export default {
         margin-bottom: 1rem;
     }
 
-    .c{
-    margin-left: 0.5rem;
+    .list-group-item list-group-item-action active {
+        background-color: greenyellow;
     }
 
-    .d{
-        font-weight: bold;
-    }
-
-    .list-group-item list-group-item-action active{
-        background-color: coral;
-    }
 </style>
 
