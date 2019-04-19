@@ -62,6 +62,10 @@ export default {
         base: '/spa/'
     },
 
+    generate: {
+        fallback: true
+    },
+
     configureWebpack: {
         resolve: {
             alias: {

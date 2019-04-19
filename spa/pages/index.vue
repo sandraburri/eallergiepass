@@ -10,17 +10,17 @@
                     class="list-group-item list-group-item-action"
                 >
                     <nuxt-link :to="'/view/' + key">
-                        {{user.affected.first_name}}         
+                        {{user.affected.first_name}}
                         {{user.affected.last_name}}
-                        <span class="float-left">
-                            <i class="material-icons">person</i>
+                        <span class="icon-left">
+                            <fa :icon="['fas', 'user']" />
                         </span>
                     </nuxt-link>
                 </li>
 
                 <li>
                     <nuxt-link to="/add/scan" class="btn btn-outline">
-                        <i class="fa fa-plus"></i> 
+                        <fa :icon="['fas', 'plus']" />
                         Weiteres Profil hinzufügen
                     </nuxt-link>
                 </li>
@@ -33,8 +33,8 @@
                 <li class="list-group-item list-group-item-action">
                     <nuxt-link to="/emergency/contact">
                         Erika Müller
-                        <span class="float-left">
-                            <i class="material-icons">person</i>
+                        <span class="icon-left">
+                            <fa :icon="['fas', 'user']" />
                         </span>
                     </nuxt-link>
                 </li>
@@ -46,8 +46,8 @@
                 <li class="list-group-item list-group-item-action">
                     <nuxt-link to="/emergency/help">
                         Notfallanleitung
-                        <span class="float-left">
-                            <i class="material-icons"> error </i>
+                        <span class="icon-left">
+                            <fa :icon="['fas', 'exclamation-circle']" />
                         </span>
                     </nuxt-link>
                 </li>
@@ -58,12 +58,12 @@
             <h3>Informationen</h3>
             <ul class="list-group">
                 <li class="list-group-item list-group-item-action">
-                    <nuxt-link to="">
+                    <a href="https://www.aha.ch" target="_blank">
                         aha! Allergiezentrum Schweiz
-                        <span class="float-right">
-                             <i class="material-icons"> call_made </i>
+                        <span class="icon-right">
+                             <fa :icon="['fas', 'external-link-alt']" />
                         </span>
-                    </nuxt-link>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -72,68 +72,68 @@
             <h3>Ratgeber</h3>
             <ul class="list-group">
                 <li class="list-group-item list-group-item-action">
-                    <nuxt-link to=""> 
-                        Allergien 
-                        <span class="float-left">
-                            <i class="material-icons"> library_books </i>
+                    <nuxt-link to="">
+                        Allergien
+                        <span class="icon-left">
+                            <fa :icon="['fas', 'book']" />
                         </span>
-                        <span class="float-right">
-                            <i class="material-icons"> keyboard_arrow_right </i>
-                        </span> 
-                    </nuxt-link>         
+                        <span class="icon-right">
+                            <fa :icon="['fas', 'chevron-right']" />
+                        </span>
+                    </nuxt-link>
                 </li>
 
                 <li class="list-group-item list-group-item-action">
-                    <nuxt-link to=""> 
-                        Asthma 
-                        <span class="float-left">
-                            <i class="material-icons"> library_books </i>
+                    <nuxt-link to="">
+                        Asthma
+                        <span class="icon-left">
+                            <fa :icon="['fas', 'book']" />
                         </span>
-                        <span class="float-right">
-                            <i class="material-icons"> keyboard_arrow_right </i>
-                        </span> 
-                    </nuxt-link>         
+                        <span class="icon-right">
+                            <fa :icon="['fas', 'chevron-right']" />
+                        </span>
+                    </nuxt-link>
                 </li>
 
                 <li class="list-group-item list-group-item-action">
-                    <nuxt-link to=""> 
+                    <nuxt-link to="">
                         Ekzem / Hautreaktionen
-                        <span class="float-left">
-                            <i class="material-icons"> library_books </i>
+                        <span class="icon-left">
+                            <fa :icon="['fas', 'book']" />
                         </span>
-                        <span class="float-right">
-                            <i class="material-icons"> keyboard_arrow_right </i>
-                        </span> 
-                    </nuxt-link>         
+                        <span class="icon-right">
+                            <fa :icon="['fas', 'chevron-right']" />
+                        </span>
+                    </nuxt-link>
                 </li>
 
                 <li class="list-group-item list-group-item-action">
-                    <nuxt-link to=""> 
+                    <nuxt-link to="">
                         Intoleranzen
-                        <span class="float-left">
-                            <i class="material-icons"> library_books </i>
+                        <span class="icon-left">
+                            <fa :icon="['fas', 'book']" />
                         </span>
-                        <span class="float-right">
-                            <i class="material-icons"> keyboard_arrow_right </i>
-                        </span> 
-                    </nuxt-link>         
+                        <span class="icon-right">
+                            <fa :icon="['fas', 'chevron-right']" />
+                        </span>
+                    </nuxt-link>
                 </li>
-                
+
                 <li class="list-group-item list-group-item-action">
-                    <nuxt-link to=""> 
+                    <nuxt-link to="">
                         Wissenswertes
-                        <span class="float-left">
-                            <i class="material-icons"> library_books </i>
+                        <span class="icon-left">
+                            <fa :icon="['fas', 'book']" />
                         </span>
-                        <span class="float-right">
-                            <i class="material-icons"> keyboard_arrow_right </i>
-                        </span> 
-                    </nuxt-link>         
+                        <span class="icon-right">
+                            <fa :icon="['fas', 'chevron-right']" />
+                        </span>
+                    </nuxt-link>
                 </li>
 
             </ul>
         </div>
-           
+
     </section>
 
 </template>
@@ -180,6 +180,7 @@ export default {
     .list-group-item list-group-item-action active {
         background-color: greenyellow;
     }
+
 
 </style>
 

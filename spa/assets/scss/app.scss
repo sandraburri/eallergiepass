@@ -6,6 +6,7 @@
     nav {
         background-color: #8DCB1F;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+        margin-bottom: 2rem;
     }
 
     .navbar-brand img {
@@ -68,13 +69,32 @@ body {
         display: block;
         background: #fff;
         color: #000;
-        padding: 1rem;
+        padding: 1rem 1rem 1rem 2.5rem;
         text-decoration: none;
 
         &:hover  {
             background: #eee;
         }
     }
+
+    .icon-left {
+        position: absolute;
+        top: 1rem;
+        left: .8rem;
+    }
+
+    .icon-right {
+        position: absolute;
+        top: 1rem;
+        right: .8rem;
+        color: #aaa;
+    }
+}
+
+
+h1 {
+    font-size: 140%;
+    margin: 0 0 1rem 0;
 }
 
 h2 {
@@ -91,4 +111,31 @@ h3 {
     font: bold;
     margin: 1rem 0 0.3em 0;
     padding: 0;
+}
+
+h4 {
+    font-size: 120%;
+    font: bold;
+    margin: 1rem 0 0.3em 0;
+    padding: 0;
+}
+
+.alert-icon {
+    position: relative;
+
+    .icon {
+        position: absolute;
+        top: .7rem;
+        left: 1.5rem;
+    }
+
+    .content {
+        padding: 0 0 0 2rem;
+    }
+
+
+    &.p-0 .icon {
+        left: 0;
+        top: .3rem;
+    }
 }
