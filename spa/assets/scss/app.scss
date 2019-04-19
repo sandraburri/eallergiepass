@@ -1,3 +1,5 @@
+@import '_variables.scss';
+@import '~bootstrap/scss/bootstrap.scss';
 
 .eallergiepass {
 
@@ -49,5 +51,28 @@ body {
     a {
         font-size: 85%;
         color: #666;
+    }
+}
+
+.list-group-item,
+.list-group-item:last-child {
+    border-radius: 0 !important;
+}
+
+.list-group-item-action {
+    padding: 0;
+    border: 1px solid #ccc;
+    border-radius: 0;
+
+    a {
+        display: block;
+        background: #fff;
+        color: #000;
+        padding: 1rem;
+        text-decoration: none;
+
+        &:hover  {
+            background: #eee;
+        }
     }
 }

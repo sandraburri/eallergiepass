@@ -1,6 +1,6 @@
 <template>
-    <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-        <a class="navbar-brand" href="/" title="eAllergiepass">
+    <nav class="navbar navbar-expand-md navbar-light">
+        <a class="navbar-brand" href="/spa" title="eAllergiepass">
             <logo />
         </a>
     </nav>

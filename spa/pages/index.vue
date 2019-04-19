@@ -1,15 +1,26 @@
 <template>
     <section class="container-fluid">
 
-        <div class="text-justify mb-4">
-            Scannen Sie den QR-Code auf Ihrem Allergiepass
-            mit der Smartphone Kamera.
-        </div>
-
         <ul class="list-group">
-            <li class="list-group-item list-group-item-action"><nuxt-link to="/profile/f02255d0-5e91-11e9-8650-c5d045daf6c0">Sandra Burri</nuxt-link></li>
-            <li class="list-group-item list-group-item-action"><nuxt-link to="/profile/f0227150-5e91-11e9-b48a-fb57e2e4ed32">Rebecca Scheidegger</nuxt-link></li>
+            <li
+                v-for="user in users"
+                v-bind:key="user.id"
+                class="list-group-item list-group-item-action"
+            >
+                <nuxt-link :to="'/view/' + user.unique_id">
+                    {{user.ahv_number}}
+                    <span class="float-right">
+                        <i class="material-icons">person</i>
+                    </span>
+                </nuxt-link>
+            </li>
         </ul>
+
+        <nuxt-link to="/add/scan" class="btn btn-outline">
+            <i class="fa fa-plus"></i>
+            Weitere Profile hinzufügen
+        </nuxt-link>
+
     </section>
 </template>
 
@@ -19,13 +30,23 @@ export default {
 
     data() {
         return {
-            loading: true,
-            title: 'loading...'
+            users: []
         }
     },
 
     async mounted() {
-        this.title = "Test";
+        this.title = "eAllergiepass";
+
+        let users = localStorage['users'] || '';
+        if (users) {
+            users = JSON.parse(users);
+        }
+
+        this.users = users || [];
+
+        if (!this.users.length) {
+            this.$router.push('/add/scan');
+        }
     },
 
     methods: {
@@ -35,13 +56,10 @@ export default {
 </script>
 
 <style>
-.container {
-    margin: 0 auto;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
+    .container-fluid {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
 </style>
 
