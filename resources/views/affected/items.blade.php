@@ -2,37 +2,29 @@
 
 @section('content')
 <div class="container-fluid">
-    <div class="col">
-        <h2>Patient &laquo;{{$address->first_name}} {{$address->last_name}}&raquo; bearbeiten</h2>
-        
-        <a 
-            href="{{action("PdfController@index", ["id" => $affected->id])}}"
-            class="btn btn-primary"
-            >
-            <i class="fa fa-btn fa-print"></i>
-            Allergiepass drucken
-        </a>
-        
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Patient &laquo;{{$address->first_name}} {{$address->last_name}}&raquo; bearbeiten</h2>
+            <a
+                href="{{action("PdfController@index", ["id" => $affected->id])}}"
+                class="btn btn-primary"
+                >
+                <i class="fa fa-btn fa-print"></i>
+                Allergiepass drucken
+            </a>
+        </div>
+        <div class="col-md-4 text-right pr-4">
+            {!! $qrCode !!}
+        </div>
     </div>
 
-        @php
-        $url = config('eallergiepass.url') . '/profile/' . $affected->unique_id;
-        $code = '';
-        try {
-            $code = QrCode::size(150)->generate($url);
-        } catch (Exception $e) {
-            $code = $e;
-        }
-    @endphp
-    {!! $code !!}
- 
     <div class="col mt-4">
 
         <table class="table">
             @foreach ($affectedItems as $type => $items)
             <thead>
                 <tr>
-                    <td colspan="7">
+                    <td colspan="8">
                         <h2>{{__($type)}}</h2>
 
                         <a href="{{action("AffectedItemsController@create", ["type" => $type, "affected_id" => $affected->id])}}">
