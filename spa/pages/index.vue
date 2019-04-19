@@ -1,7 +1,15 @@
 <template>
-    <section class="container">
-        {{title}}
-        <nuxt-link to="/profile">Profile</nuxt-link>
+    <section class="container-fluid">
+
+        <div class="text-justify mb-4">
+            Scannen Sie den QR-Code auf Ihrem Allergiepass
+            mit der Smartphone Kamera.
+        </div>
+
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-action"><nuxt-link to="/profile/f02255d0-5e91-11e9-8650-c5d045daf6c0">Sandra Burri</nuxt-link></li>
+            <li class="list-group-item list-group-item-action"><nuxt-link to="/profile/f0227150-5e91-11e9-b48a-fb57e2e4ed32">Rebecca Scheidegger</nuxt-link></li>
+        </ul>
     </section>
 </template>
 
@@ -17,8 +25,7 @@ export default {
     },
 
     async mounted() {
-        let { data } = await this.$axios.$get(`${process.env.NUXT_ENV_API_URL}/api/users/c589ca80-605d-11e9-810f-17b51517a75c`);
-        this.title = data.ahv_number;
+        this.title = "Test";
     },
 
     methods: {
@@ -37,3 +44,4 @@ export default {
     text-align: center;
 }
 </style>
+

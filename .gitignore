@@ -15,8 +15,9 @@ public/js/*.*
 public/css/*.*
 public/mix-manifest.json
 public/fonts/**/*.*
-/public/_nuxt
-/public/.nojekyll
-/public/200.html
-/public/icon.png
-/public/sw.js
+/public/spa/index.html
+/public/spa/_nuxt
+/public/spa/.nojekyll
+/public/spa/200.html
+/public/spa/icon.png
+/public/spa/sw.js

@@ -16,14 +16,16 @@ mix.webpackConfig({
 mix.js('resources/js/app.js', 'public/js')
 mix.sass('resources/sass/app.scss', 'public/css');
 
-mix.copyWatched('spa/dist/.nojekyll', 'public/.nojekyll')
-mix.copyWatched('spa/dist/200.html', 'public/200.html')
-mix.copyWatched('spa/dist/icon.png', 'public/icon.png')
-mix.copyWatched('spa/dist/sw.js', 'public/sw.js')
-mix.copyWatched('spa/dist/index.html', 'resources/views/welcome.blade.php')
+let spaSource = "spa/dist/";
+let spaTarget = "public/spa/";
+mix.copyWatched(`${spaSource}.nojekyll`, `${spaTarget}.nojekyll`)
+mix.copyWatched(`${spaSource}200.html`, `${spaTarget}/200.html`)
+mix.copyWatched(`${spaSource}icon.png`, `${spaTarget}/icon.png`)
+mix.copyWatched(`${spaSource}sw.js`, `${spaTarget}/sw.js`)
+mix.copyWatched(`${spaSource}index.html`, `${spaTarget}/index.html`)
 
-mix.copyWatched('spa/dist/_nuxt/**/*.js(on)', 'public/_nuxt/', { base: '' });
-mix.copyWatched('spa/dist/_nuxt/**/*.js', 'public/_nuxt/', { base: '' });
-mix.copyWatched('spa/dist/_nuxt/**/icons/*',  'public/_nuxt/icons/',  { base: '' });
+mix.copyWatched(`${spaSource}_nuxt/**/*.js(on)`, `${spaTarget}/_nuxt/`, { base: '' });
+mix.copyWatched(`${spaSource}_nuxt/**/*.js`, `${spaTarget}/_nuxt/`, { base: '' });
+mix.copyWatched(`${spaSource}_nuxt/**/icons/*`,  `${spaTarget}/_nuxt/icons/`,  { base: '' });
 
 

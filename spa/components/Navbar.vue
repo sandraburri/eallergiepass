@@ -1,5 +1,5 @@
 <template>
-    <nav>
-        <h1>Hedaa</h1>
-    </nav>
+
+    <div></div>
+
 </template>
