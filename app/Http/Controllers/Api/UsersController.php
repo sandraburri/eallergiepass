@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Api;
 
-use Auth;
 use Illuminate\Http\Request;
 use App\Affected;
 use App\AffectedItem;
@@ -21,8 +20,14 @@ class UsersController extends \App\Http\Controllers\Controller
         $address = $affected->user->address;
         $jsonAffected = [
             "ahv_number" => $affected->ahv_number,
-            "birth_date" => $affected->birth_date->format("dd.MM.yyyy"),
-            "street" => $address->street
+            "birth_date" => $affected->birth_date->format("d.m.Y"),
+            "phone_number" => $address->phone_number,
+            "first_name" => $address->first_name,
+            "last_name" => $address->last_name,
+            "street" => $address->street,
+            "street_number" => $address->street_number,
+            "zip" => $address->zip,
+            "city" => $address->city
         ];
         
         $jsonAffectedItems = [
@@ -35,7 +40,12 @@ class UsersController extends \App\Http\Controllers\Controller
         {
             $jsonAffectedItem = [
                 "type" => __($item->type),
-                "name" => $item->name
+                "name" => $item->name,
+                "symptoms" => $item->symptoms,
+                "verification" => optional($item->verification)->format("d.m.Y"),
+                "medication" => $item->medication,
+                "emergency_medication" => $item->emergency_medication,
+                "suspicion" => $item->suspicion
             ];
 
             $jsonAffectedItems[$item->type][] = $jsonAffectedItem;
@@ -46,7 +56,15 @@ class UsersController extends \App\Http\Controllers\Controller
 
         $jsonCareProvider = [
             "title" => $careProvider->title,
-            "street" => $address->street
+            "name" => $careProvider->name,
+            "discipline" => $careProvider->discipline,
+            "phone_number" => $address->phone_number,
+            "first_name" => $address->first_name,
+            "last_name" => $address->last_name,
+            "street" => $address->street,
+            "street_number" => $address->street_number,
+            "zip" => $address->zip,
+            "city" => $address->city
         ];
 
         $data = [
