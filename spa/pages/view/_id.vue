@@ -1,16 +1,18 @@
 <template>
     <section class="container-fluid" v-if="user">
-       <br />
+      
        <h2> Notfallinformationen von </h2>
-        {{user.affected.first_name}}
-        {{user.affected.last_name}} <br />
-        {{user.affected.street}}
-        {{user.affected.street_number}} <br />
-        {{user.affected.zip}}
-        {{user.affected.city}} <br />
-        {{user.affected.phone_number}} <br />
-        {{user.affected.ahv_number}} <br />
-        {{user.affected.birth_date}} <br />
+        <div class="form-address">
+            {{user.affected.first_name}}         
+            {{user.affected.last_name}} <br />        
+            {{user.affected.street}}
+            {{user.affected.street_number}} <br />
+            {{user.affected.zip}}
+            {{user.affected.city}} <br />
+            {{user.affected.phone_number}} <br />
+            {{user.affected.ahv_number}} <br />
+            {{user.affected.birth_date}} <br />
+        </div>
   
         <br />
         <h2> Medizinische Informationen </h2>
@@ -44,7 +46,7 @@
                 
                 <div class="form-group" v-if="item.suspicion">
                     <p class="label">Verdacht auf</p>
-                    <p>{{item.suspicion}}</p>
+                    <p> Ja </p>
                 </div>
                
                 <div class="form-group" v-if="item.medication">
@@ -62,16 +64,18 @@
         </div>
 
        <h2> Ausgestellt von </h2>
-        {{user.careProvider.name}} <br />
-         {{user.careProvider.title}}
-        {{user.careProvider.first_name}}
-        {{user.careProvider.last_name}} <br />
-        {{user.careProvider.discipline}} <br />
-        {{user.careProvider.street}}
-        {{user.careProvider.street_number}} <br />
-        {{user.careProvider.zip}}
-        {{user.careProvider.city}} <br />
-        {{user.careProvider.phone_number}} <br />
+       <div class="form-address">
+            {{user.careProvider.name}} <br />
+            {{user.careProvider.title}}
+            {{user.careProvider.first_name}}
+            {{user.careProvider.last_name}} <br />
+            {{user.careProvider.discipline}} <br />
+            {{user.careProvider.street}}
+            {{user.careProvider.street_number}} <br />
+            {{user.careProvider.zip}}
+            {{user.careProvider.city}} <br />
+            {{user.careProvider.phone_number}} <br />
+         </div>
         <br />
         
     </section>
@@ -112,9 +116,16 @@ export default {
 
 <style>
 
+    div.form-address {
+        font-size: 80%;
+        margin: 0;
+        padding: 0; 
+        }
+
     .item {
         margin: 10px;
-        padding: 0;
+        margin-left: 0px;
+        margin-top: 0px;
     }
 
     p {
@@ -128,7 +139,7 @@ export default {
     }
 
     div.form-group {
-       margin: 0;
+        margin: 0;
         padding: 0; 
     }
 
