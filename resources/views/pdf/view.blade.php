@@ -35,9 +35,7 @@ $inner_style = "$align_top; width: " . $inner_width ."px; $border_right; padding
 </head>
 
 <body>
-
-    <div style="border:1px solid #000;padding: 5px">
-
+    <div style="border:1px solid #000;padding: 5px; background: #f5f5f5">
         <table style="height:{{$table_height}}px;width:{{$table_width}}px;{{$table_border}}; border-collapse: collapse;">
             <tr>
                 <td style="{{$align_top}}; width: {{$col1}}px; {{$border_right}}; {{$col_padding}}">
@@ -113,24 +111,22 @@ $inner_style = "$align_top; width: " . $inner_width ."px; $border_right; padding
 
                 </td>
             <tr>
-                <td style="{{$inner_style}}; {{$col_padding}}">
-                    <div>                        
+                <td style="{{$col_padding}}">
+                    <div style="margin: 0 0 10px 0">
                         {!! $qrCode !!}
                     </div>
-
-                    Beschreibung Vorgehen via<br />
-                    Browser oder QR-Code scannen....
-
+                    <div style="font-size: 10px; width: 160px">
+                        Beschreibung Vorgehen via Browser oder QR-Code scannen....
+                    </div>
                 </td>
 
-                <td style="{{$inner_style}}; {{$col_padding}}; text-align: justify; padding-right: 20px; vertical-align:bottom">
+                <td style="{{$col_padding}}; padding-right: 20px; vertical-align:top">
                     Beim Inhaber dieses Allergiepasses
                     besteht eine Überepfindlichkeit auf
                     die aufgeführten Allergene oder
                     Medikamente. Dieses Dokument sollte
                     deshalb immer mitgeführt und bei
-                    jedem Arzt, Zahnarzt und Apotheken-
-                    besuch vorgelegt werden.
+                    jedem Arzt, Zahnarzt und Apothekenbesuch vorgelegt werden.
                 </td>
             <tr>
         </table>
