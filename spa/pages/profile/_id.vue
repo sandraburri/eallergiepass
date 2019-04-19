@@ -1,12 +1,10 @@
 <template>
     <section class="container">
         {{title}}
-        <nuxt-link to="/profile">Profile</nuxt-link>
     </section>
 </template>
 
 <script>
-
 export default {
 
     data() {
@@ -17,7 +15,7 @@ export default {
     },
 
     async mounted() {
-        let { data } = await this.$axios.$get(`${process.env.NUXT_ENV_API_URL}/api/users/c589ca80-605d-11e9-810f-17b51517a75c`);
+        let { data } = await this.$axios.$get(`${process.env.NUXT_ENV_API_URL}/api/users/${this.$route.params.id}`);
         this.title = data.ahv_number;
     },
 

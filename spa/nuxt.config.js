@@ -25,12 +25,12 @@ export default {
     /*
      ** Global CSS
      */
-    css: [],
+    css: ['~/assets/scss/app.scss'],
 
     /*
      ** Plugins to load before mounting the App
      */
-    plugins: [],
+    plugins: ['~/plugins/globals'],
 
     /*
      ** Nuxt.js modules
@@ -78,5 +78,16 @@ export default {
                 '^/api': '/'
             }
         }
+    },
+
+    workbox: {
+        config: {
+            debug: true
+        }
+    },
+
+    manifest: {
+        name: 'My Awesome App',
+        lang: 'fa'
     }
 }
