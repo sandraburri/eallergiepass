@@ -45,7 +45,18 @@ class PdfController extends Controller
             $affectedItems[$item->type][] = $item;
         }
 
+        $url = config('eallergiepass.url') . '/spa/add/' . $affected->unique_id;
+        $qrCode = '';
+        try {
+            $size = 150;
+            $qrCode = \QrCode::size($size)->format('png')->generate($url);
+            $qrCode = '<img style="width:'.$size.'px" src="data:image/png;base64, ' . base64_encode($qrCode) . '" />';
+        } catch (Exception $e) {
+            $qrCode = $e;
+        }
+
         $data = [
+            "qrCode" => $qrCode,
             "affected" => $affected,
             "careprovider" => $careprovider,
             "affectedItems" => $affectedItems

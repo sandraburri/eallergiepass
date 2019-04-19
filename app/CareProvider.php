@@ -16,11 +16,6 @@ class CareProvider extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function address()
-    {
-        return $this->hasOneThrough('App\User', 'App\Address');
-    }
-
     protected $rules = [
         'user_id' => 'required',
         'name' => 'required',

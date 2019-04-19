@@ -3,12 +3,12 @@
 
         <ul class="list-group">
             <li
-                v-for="user in users"
-                v-bind:key="user.id"
+                v-for="(user, key) in users"
+                v-bind:key="key"
                 class="list-group-item list-group-item-action"
             >
-                <nuxt-link :to="'/view/' + user.unique_id">
-                    {{user.ahv_number}}
+                <nuxt-link :to="'/view/' + key">
+                    {{key}}
                     <span class="float-right">
                         <i class="material-icons">person</i>
                     </span>
@@ -42,11 +42,13 @@ export default {
             users = JSON.parse(users);
         }
 
-        this.users = users || [];
+        users = users || {};
 
-        if (!this.users.length) {
+        if (!Object.keys(users).length) {
             this.$router.push('/add/scan');
         }
+
+        this.users = users;
     },
 
     methods: {

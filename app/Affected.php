@@ -20,6 +20,11 @@ class Affected extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function careProvider()
+    {
+        return $this->belongsTo('App\CareProvider');
+    }
+
     protected $rules = [
         'user_id' => 'required',
         'ahv_number' => 'required|unique',

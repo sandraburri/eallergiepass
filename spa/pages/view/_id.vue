@@ -1,6 +1,6 @@
 <template>
     <section class="container-fluid">
-        {{user}}
+        {{user.ahv_number}}
     </section>
 </template>
 
@@ -10,26 +10,24 @@ export default {
     data() {
         return {
             loading: true,
-            user: null
+            user: {}
         }
     },
 
     async mounted() {
         let userId = this.$route.params.id;
-        let { data } = await this.$axios.$get(`${process.env.NUXT_ENV_API_URL}/api/users/${userId}`);
 
         let users = localStorage['users'] || '';
         if (users) {
             users = JSON.parse(users);
         }
 
-        users = users || [];
-        if (!users.length) {
+        users = users || {};
+         if (!Object.keys(users).length) {
             this.$router.push('/');
-            return;
         }
-
-        this.user = users[0];
+        
+        this.user = users[userId];
     },
 
     methods: {

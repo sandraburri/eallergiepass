@@ -114,19 +114,8 @@ $inner_style = "$align_top; width: " . $inner_width ."px; $border_right; padding
                 </td>
             <tr>
                 <td style="{{$inner_style}}; {{$col_padding}}">
-                    <div>
-                        @php
-                        $url = config('eallergiepass.url') . '/profile/' . $affected->unique_id;
-                        $code = '';
-                        try {
-                            $size = 150;
-                            $code = QrCode::size($size)->format('png')->generate($url);
-                            $code = '<img style="width:'.$size.'px" src="data:image/png;base64, ' . base64_encode($code) . '" />';
-                        } catch (Exception $e) {
-                            $code = $e;
-                        }
-                        @endphp
-                        {!! $code !!}
+                    <div>                        
+                        {!! $qrCode !!}
                     </div>
 
                     Beschreibung Vorgehen via<br />
