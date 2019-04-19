@@ -13,7 +13,7 @@ export default {
 
     async mounted() {
         let userId = this.$route.params.id;
-        let { data } = await this.$axios.$get(`${process.env.NUXT_ENV_API_URL}/api/users/${userId}`);
+        let { data } = await this.$axios.$get(`http://eallergiepass.test/api/users/${userId}`);
 
         let users = localStorage['users'] || '';
         if (users) {
