@@ -11,6 +11,10 @@ class AffectedItem extends Model
 
     protected $table = 'affected_items';
 
+    protected $casts = [
+        'verification' => 'date'
+    ];
+
     protected $rules = [
         'affected_id' => 'required',
         'type'        => 'required'
