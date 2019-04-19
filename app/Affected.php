@@ -11,14 +11,13 @@ class Affected extends Model
 
     protected $table = 'affected';
 
+    protected $casts = [
+        'birth_date' => 'date'
+    ];
+
     public function user()
     {
         return $this->belongsTo('App\User');
-    }
-
-    public function address()
-    {
-        return $this->hasOneThrough('App\User', 'App\Address');
     }
 
     protected $rules = [
