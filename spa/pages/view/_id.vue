@@ -100,7 +100,7 @@ export default {
          if (!Object.keys(users).length) {
             this.$router.push('/');
         }
-        
+
         this.user = users[userId];
     },
 

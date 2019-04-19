@@ -40,7 +40,10 @@ class AffectedController extends Controller
             array_push($affectedItems[$item->type], $item);
         }
 
+        $qrCode = \App\QrCode::getAffected($affected, 100);
+
         return view('affected/items', [
+            'qrCode' => $qrCode,
             'affected' => $affected,
             'affectedItems' => $affectedItems,
             'address' => $address,
