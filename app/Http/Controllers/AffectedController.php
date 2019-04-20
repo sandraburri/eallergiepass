@@ -61,6 +61,13 @@ class AffectedController extends Controller
 
     public function create(Request $request)
     {
+        $careProviderUser = Auth::user();
+        $careProvider = $careProviderUser->careProvider;
+        $careProviderId = $careProvider->id;
+        if (!$careProviderId) {
+            abort(404, "CareProvider not found.");
+        }
+
         $ahv_number = $request->ahv_number;
         if (!AhvNumber::isValid($ahv_number)) {
             return redirect()
@@ -87,6 +94,7 @@ class AffectedController extends Controller
         $affected->user_id = $user->id;
         $affected->unique_id = $userId;
         $affected->ahv_number = $ahv_number;
+        $affected->care_provider_id = $careProviderId;
         $affected->save();
 
         if (!$affected->save()) {

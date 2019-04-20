@@ -46,14 +46,14 @@ class User extends Authenticatable
 
     protected $with = ['address'];
 
-    public function careProviders()
+    public function careProvider()
     {
-        return $this->hasMany('App\CareProvider');
+        return $this->hasOne('App\CareProvider');
     }
 
     public function affected()
     {
-        return $this->hasMany('App\Affected');
+        return $this->hasOne('App\Affected');
     }
 
     public function address()
