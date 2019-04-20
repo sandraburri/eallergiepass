@@ -30,7 +30,7 @@ class AffectedItemsController extends Controller
 
     public function store(Request $request)
     {
-        
+
         //"_token" => "kfWk8h4ngkRsw6vv7dUFLXnisRrNT9i7QRUGOhJm"
         //   "name" => "Bienengift"
         //   "symptoms" => "Atemnot"
@@ -51,7 +51,6 @@ class AffectedItemsController extends Controller
                 ->withInput();
         }
 
-
         $item->name = $request->name;
         $item->verification = Carbon::parse($request->verification);
         $item->verified_by = $request->verified_by;
@@ -62,7 +61,6 @@ class AffectedItemsController extends Controller
         $item->isValid();
 
         $input = $request->toArray();
-
 
         if (!$item->save()) {
             return redirect()
@@ -76,7 +74,7 @@ class AffectedItemsController extends Controller
 
     public function delete(Request $request)
     {
-    
+
         $item = AffectedItem::where("id", $request->id)->first();
         if (!$item) {
             return redirect()
@@ -85,10 +83,7 @@ class AffectedItemsController extends Controller
                 ->withInput();
         }
 
-
-
-    $item->delete();
-            
+        $item->delete();
 
         return redirect()
             ->action('AffectedController@items', ['id' => $item->affected_id]);
