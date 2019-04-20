@@ -131,18 +131,19 @@ class AffectedController extends Controller
 
     public function store(Request $request)
     {
-        $user = Auth::user();
-
         $affected = Affected::where("id", $request->affected_id)->first();
         if (!$affected) {
             return redirect()
                 ->back()
-                ->withErrors($errors)
-                ->withInput($input);
+                ->withErrors(["id" => "Id nicht gefunden"])
+                ->withInput();
         }
 
+        $birth_date = $request->birth_date;
+        $birth_date = $birth_date == null ? null : Carbon::parse($birth_date);
+
         $affected->ahv_number = $request->ahv_number;
-        $affected->birth_date = Carbon::parse($request->birth_date);
+        $affected->birth_date = $birth_date;
         $affected->isValid();
 
         $address = null;

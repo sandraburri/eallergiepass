@@ -148,10 +148,10 @@
                 <div class="form-group col-md-6">
                     <label for="{{$fieldName}}">Geburtsdatum</label>
                     <input
-                        type="text"
+                        type="date"
                         class="form-control @if($errors->has($fieldName)) is-invalid @endif"
                         name="{{$fieldName}}"
-                        value="{{old($fieldName, $affected[$fieldName])}}"
+                        value="{{optional(old($fieldName, $affected[$fieldName]))->format('Y-m-d')}}"
                         placeholder="Geburtsdatum"
                     />
                     <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>

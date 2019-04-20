@@ -18,51 +18,43 @@
         </div>
     </div>
 
-    <div class="col mt-4">
+    <div class="items-table">
+        @foreach ($affectedItems as $type => $items)
+        <div class="items-table-row">
+            <div class="items-table-col">
+                <h5>{{__($type)}}</h5>
+                <a href="{{action("AffectedItemsController@create", ["type" => $type, "affected_id" => $affected->id])}}">
+                    <i class="fa fa-btn fa-plus"></i>
+                    Hinzufügen
+                </a>
+            </div>
+        </div>
 
-        <table class="table">
-            @foreach ($affectedItems as $type => $items)
-            <thead>
-                <tr>
-                    <td colspan="8">
-                        <h2>{{__($type)}}</h2>
+        @if ($items)
 
-                        <a href="{{action("AffectedItemsController@create", ["type" => $type, "affected_id" => $affected->id])}}">
-                            <i class="fa fa-btn fa-plus"></i>
-                            Hinzufügen
-                        </a>
-                    </td>
-                </tr>
+        <div class="items-table-row header">
+            <div class="items-table-col type">{{$type == 'allergy' ? "Allergen" : "Typ"}}</div>
+            <div class="items-table-col symptoms">Symptome</div>
+            <div class="items-table-col verification">Nachweis am</div>
+            <div class="items-table-col verified_by">Nachweis durch</div>
+            <div class="items-table-col suspicion">Verdacht auf</div>
+            <div class="items-table-col medication">Medikation</div>
+            <div class="items-table-col emergency_medication">Notfallmedikation</div>
+            <div class="items-table-col actions"></div>
+        </div>
 
-            </thead>
-
-            @if ($items)
-
-            <thead>
-                <tr>
-                    <th>{{$type == 'allergy' ? "Allergen" : "Typ"}}</th>
-                    <th>Symptome</th>
-                    <th>Nachweis am</th>
-                    <th class="">Nachweis durch</th>
-                    <th>Verdacht auf</th>
-                    <th>Medikation</th>
-                    <th>Notfallmedikation</th>
-                </tr>
-            </thead>
-
-            @foreach ($items as $item)
-            @include('includes.affectedItems-form', [
-                "type" => $type,
-                "item" => $item,
-                "verificationBy" => $verificationBy
-            ])
-            @endforeach
-            @endif
-            @endforeach
-
-        </table>
+        @foreach ($items as $item)
+        @include('includes.affectedItems-form', [
+            "type" => $type,
+            "item" => $item,
+            "verificationBy" => $verificationBy
+        ])
+        @endforeach
+        @endif
+        @endforeach
 
     </div>
+
 
 </div>
 

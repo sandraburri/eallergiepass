@@ -59,3 +59,48 @@ body {
         color: #666;
     }
 }
+
+.items-table {
+    width: 100%;
+    color: #212529;
+    margin: 2rem 0 0 0;
+}
+
+.items-table-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    border-top: 1px solid #dee2e6;
+}
+
+.items-table-row.header {
+    vertical-align: bottom;
+    border-bottom: 1px solid #dee2e6;
+    font-weight: 700;
+}
+
+.items-table-col {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 10%;
+    flex: 1;
+    padding: 0.75rem;
+    align-items: start;
+}
+
+.items-table .type,
+.items-table .symptoms {
+    width: 10%;
+}
+
+.items-table .suspicion {
+    flex-basis: 5%;
+}
+
+.items-table .actions {
+    white-space: nowrap;
+}
+
+
+
