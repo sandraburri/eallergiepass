@@ -24,15 +24,9 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container-fluid">
-                @guest
-                <a class="navbar-brand" href="{{url('/')}}" title="{{config('app.name')}}">
-                    <img src="/images/logo/logo.png" alt="" />
-                </a>
-                @else
                 <a class="navbar-brand" href="{{url('/home')}}" title="{{config('app.name')}}">
                     <img src="/images/logo/logo.png" alt="" />
                 </a>
-                @endif
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
