@@ -10,7 +10,15 @@
             <input v-model="message" placeholder="Name"> <br />
             <br />
             <input v-model="message" placeholder="Telefonnummer"> <br />
+            <br />
+            <button type="submit" class="btn btn-primary">
+                <i class="fa fa-btn fa-save"></i>
+                Speichern
+            </button>
+
         </div>
+
+
 
     </section>
 </template>
