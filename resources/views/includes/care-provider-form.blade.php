@@ -57,7 +57,7 @@
                 <label for="{{$fieldName}}">Vorname</label>
                 <input
                     type="text"
-                    placeholder="Titel"
+                    placeholder="Vorname"
                     class="form-control @if($errors->has($fieldName)) is-invalid @endif"
                     name="{{$fieldName}}"
                     value="{{old($fieldName)}}"
