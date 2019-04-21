@@ -1,10 +1,10 @@
 <template>
     <section class="container-fluid" v-if="user">
-      
+
        <h2> Notfallinformationen von </h2>
         <div class="form-address">
-            {{user.affected.first_name}}         
-            {{user.affected.last_name}} <br />        
+            {{user.affected.first_name}}
+            {{user.affected.last_name}} <br />
             {{user.affected.street}}
             {{user.affected.street_number}} <br />
             {{user.affected.zip}}
@@ -13,10 +13,10 @@
             {{user.affected.ahv_number}} <br />
             {{user.affected.birth_date}} <br />
         </div>
-  
+
         <br />
         <h2> Medizinische Informationen </h2>
-  
+
         <div
             v-for="(items, key, i) in user.affectedItems"
             v-bind:key="i"
@@ -43,12 +43,12 @@
                     <p class="label">Nachgewisen am</p>
                     <p>{{item.verification}}</p>
                 </div>
-                
+
                 <div class="form-group" v-if="item.suspicion">
                     <p class="label">Verdacht auf</p>
                     <p> Ja </p>
                 </div>
-               
+
                 <div class="form-group" v-if="item.medication">
                     <p class="label">Medikamente</p>
                     <p>{{item.medication}}</p>
@@ -58,7 +58,7 @@
                     <p class="label">Notfallmedikamente</p>
                     <p class="emergency">{{item.emergency_medication}}</p>
                 </div>
-               
+
             </div>
 
         </div>
@@ -77,7 +77,14 @@
             {{user.careProvider.phone_number}} <br />
          </div>
         <br />
-        
+
+
+        <button type="submit" class="btn btn-primary">
+                <fa :icon="['fas', 'trash']" />
+                Entfernen
+            </button>
+
+
     </section>
 
 </template>
@@ -119,7 +126,7 @@ export default {
     div.form-address {
         font-size: 80%;
         margin: 0;
-        padding: 0; 
+        padding: 0;
         }
 
     .item {
@@ -140,7 +147,7 @@ export default {
 
     div.form-group {
         margin: 0;
-        padding: 0; 
+        padding: 0;
     }
 
     p.emergency {

@@ -30,14 +30,26 @@
         <div>
             <h3>Notfallkontakt</h3>
             <ul class="list-group">
+
                 <li class="list-group-item list-group-item-action">
-                    <nuxt-link to="/emergency/contact">
-                        Erika Müller
+                    <nuxt-link to="">
+                        {{emergency_contact.first_name}}
+                        {{emergency_contact.last_name}}
                         <span class="icon-left">
                             <fa :icon="['fas', 'user']" />
                         </span>
+                        <span class="icon-right">
+                            <fa :icon="['fas', 'phone']" />
+                        </span>
+                     </nuxt-link>
+                </li>
+
+                <li>
+                    <nuxt-link to="/emergency/contact" class="btn btn-outline">
+                        Notfallkontakt bearbeiten
                     </nuxt-link>
                 </li>
+
             </ul>
         </div>
 
@@ -144,7 +156,12 @@ export default {
 
     data() {
         return {
-            users: []
+            users: [],
+            emergency_contact: {
+                first_name: "Stefan",
+                last_name: "Kestenholz",
+                phone_number: "0313334455"
+            }
         }
     },
 

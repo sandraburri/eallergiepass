@@ -6,19 +6,16 @@
         </div>
 
         <div class="form-contains">
-            <input v-model="message" placeholder="Vorname">
-            <input v-model="message" placeholder="Name"> <br />
+            <input v-model="first_name" placeholder="Vorname">
+            <input v-model="last_name" placeholder="Name"> <br />
             <br />
-            <input v-model="message" placeholder="Telefonnummer"> <br />
+            <input v-model="phone_number" placeholder="Telefonnummer"> <br />
             <br />
             <button type="submit" class="btn btn-primary">
-                <i class="fa fa-btn fa-save"></i>
+                 <fa :icon="['fas', 'save']" />
                 Speichern
             </button>
-
         </div>
-
-
 
     </section>
 </template>
@@ -26,6 +23,13 @@
 <script>
 
     export default {
+        data() {
+            return {
+                first_name: null,
+                last_name: null,
+                phone_number: null
+            }
+        }
     }
 
 </script>
