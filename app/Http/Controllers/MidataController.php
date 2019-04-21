@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Affected;
 use App\AffectedItem;
+use App\Fhir\AffectedConverter;
+
 
 class MidataController extends Controller
 {
@@ -13,25 +15,14 @@ class MidataController extends Controller
         if (!$affected) {
             abort(404, "User '$id' not found.");
         }
-
         $address = $affected->user->address;
         if (!$address) {
             abort(404, "Affected.Address not found.");
         }
 
-        $jsonAffected = [
-            "ahv_number" => $affected->ahv_number,
-            "birth_date" => $affected->birth_date->format("d.m.Y"),
-            "phone_number" => $address->phone_number,
-            "first_name" => $address->first_name,
-            "last_name" => $address->last_name,
-            "street" => $address->street,
-            "street_number" => $address->street_number,
-            "zip" => $address->zip,
-            "city" => $address->city
-        ];
+        $fhirPatient = AffectedConverter::convert($affected);
 
-        $jsonAffectedItems = [
+        $fhirAffectedItems = [
             'allergy' => [],
             'intolerance' => [],
             'incompatibility' => []
@@ -39,7 +30,7 @@ class MidataController extends Controller
 
         foreach (AffectedItem::where("affected_id", $affected->id)->get() as $item)
         {
-            $jsonAffectedItem = [
+            $fhirAffectedItem = [
                 "type" => __($item->type),
                 "name" => $item->name,
                 "symptoms" => $item->symptoms,
@@ -49,7 +40,7 @@ class MidataController extends Controller
                 "suspicion" => $item->suspicion
             ];
 
-            $jsonAffectedItems[$item->type][] = $jsonAffectedItem;
+            $fhirAffectedItems[$item->type][] = $fhirAffectedItem;
         }
 
         $careProvider = $affected->careProvider;
@@ -62,7 +53,7 @@ class MidataController extends Controller
             abort(404, "CareProvider.Address not found.");
         }
 
-        $jsonCareProvider = [
+        $fhirCareProvider = [
             "title" => $careProvider->title,
             "name" => $careProvider->name,
             "discipline" => $careProvider->discipline,
@@ -76,15 +67,15 @@ class MidataController extends Controller
         ];
 
         $data = [
-            "affected" => $jsonAffected,
-            "careProvider" => $jsonCareProvider,
-            "affectedItems" => $jsonAffectedItems
+            "fhirPatient" => $fhirPatient,
+            "careProvider" => $fhirCareProvider,
+            "affectedItems" => $fhirAffectedItems
         ];
 
-        return response()->json([
-            'success' => true,
-            'data' => $data
-        ]);
+        return response()->json($data);
     }
 }
+
+
+
 

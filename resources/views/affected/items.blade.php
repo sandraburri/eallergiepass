@@ -8,14 +8,14 @@
             <a
                 href="{{action("PdfController@index", ["id" => $affected->id])}}"
                 class="btn btn-primary"
-                >
+            >
                 <i class="fa fa-btn fa-print"></i>
                 Allergiepass drucken
             </a>
             <a
-                href="{{action("MidataController@export", ["id" => $affected->id])}}"
+                href="{{action("MidataController@export", ["id" => $affected->id, "pretty" => "true"])}}"
                 class="btn btn-secondary ml-2"
-                >
+            >
                 <i class="fa fa-btn fa-cloud-upload"></i>
                 EPD Export
             </a>

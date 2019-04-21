@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6c5941a8536668a9823be311b609cc63",
+    "content-hash": "7fa6f25b3d32739f1b8f2d2ba62bcd81",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -152,6 +152,71 @@
                 "map"
             ],
             "time": "2017-10-25T22:45:27+00:00"
+        },
+        {
+            "name": "dcarbone/php-fhir",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dcarbone/php-fhir.git",
+                "reference": "8c316014fca848a0952f4d169ce9a594992a6386"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dcarbone/php-fhir/zipball/8c316014fca848a0952f4d169ce9a594992a6386",
+                "reference": "8c316014fca848a0952f4d169ce9a594992a6386",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-libxml": "*",
+                "ext-simplexml": "*",
+                "myclabs/php-enum": "@stable",
+                "php": ">=5.4.0",
+                "psr/log": "@stable"
+            },
+            "replace": {
+                "php-fhir/common": "*",
+                "php-fhir/component-tests": "*",
+                "php-fhir/elements": "*",
+                "php-fhir/object-mapper": "*",
+                "php-fhir/parser": "*",
+                "php-fhir/resources": "*",
+                "php-fhir/utilities": "*"
+            },
+            "require-dev": {
+                "myena/default-logger": "@stable",
+                "phpunit/phpunit": "<7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "files/php_fhir_constants.php"
+                ],
+                "psr-4": {
+                    "DCarbone\\PHPFHIR\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Paul Carbone",
+                    "email": "daniel.p.carbone@gmail.com"
+                }
+            ],
+            "description": "Tools for creating PHP classes from the HL7 FHIR Specification",
+            "homepage": "https://github.com/dcarbone/php-fhir",
+            "keywords": [
+                "ehr",
+                "fhir",
+                "hl7",
+                "php",
+                "php-fhir"
+            ],
+            "time": "2018-11-05T15:03:11+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -5277,7 +5342,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "dcarbone/php-fhir": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
