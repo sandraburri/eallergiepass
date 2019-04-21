@@ -14,7 +14,7 @@ class CareProvidersTableSeeder extends Seeder
         DB::table('care_providers')->insert([
             'user_id' => 1,
             'name' => 'Klinik Sonnenschein',
-            'title' => 'Dr. Med.',
+            'title' => 'Dr. med.',
             'discipline' => 'Allgemeine Innere Medizin'
         ]);
 

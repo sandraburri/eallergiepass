@@ -16,6 +16,10 @@ class AffectedConverter
 {
     public static function convert(Affected $affected)
     {
+        if (!$affected) {
+            throw "Affected not found.";
+        }
+
         $address = $affected->user->address;
         if (!$address) {
             throw "Affected.Address not found.";
@@ -50,7 +54,7 @@ class AffectedConverter
 
         $fhirAhvNumber = new FHIRExtension();
         $fhirAhvNumber->setUrl("http://eallergiepass.ch/fhir/StructureDefinition/ahv-number");
-        $fhirAhvNumber->setId(1234567);
+        $fhirAhvNumber->setId(100);
         $fhirAhvNumber->setValueString($affected->ahv_number);
 
         $fhirAffected = new FHIRPatient();
