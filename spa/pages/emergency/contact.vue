@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="container-fluid">
 
         <div class="form-contact">
             Hier können Sie eine Notfallkontaktperson erfassen <br />

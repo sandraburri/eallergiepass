@@ -59,7 +59,8 @@ export default {
     },
 
     router: {
-        base: '/spa/'
+        base: '/spa/',
+        mode: 'hash'
     },
 
     generate: {

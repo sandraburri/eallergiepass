@@ -1,8 +1,6 @@
 <template>
     <section class="container-fluid">
 
-        <h1>Profil hinzufügen</h1>
-
         <div class="alert alert-default alert-icon p-0">
             <div class="icon">
                 <fa :icon="['fas', 'camera']" />
@@ -17,8 +15,7 @@
         </div>
 
         <div class="wrapper mt-4" v-if="fallback">
-            <h4>Keine Kamera detektiert!</h4>
-
+            <h4>QR-Code Scanner nicht gefunden</h4>
             <small class="mt-2 text-danger">
                 Technische Meldung: {{error}}
             </small>
@@ -63,9 +60,10 @@
         methods: {
             onDecode (s) {
                 s = (s || "").toLowerCase();
-                if (s.indexOf('/spa/add/') !== -1) {
-                    var uniqueId = s = s.split('/spa/add/')[1];
-                    location.replace('/spa/add/' + uniqueId)
+                var token = '/spa/#/add/';
+                if (s.indexOf(token) !== -1) {
+                    var uniqueId = s = s.split(token)[1];
+                    location.replace(token + uniqueId)
                 }
             },
 
