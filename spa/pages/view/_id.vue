@@ -1,10 +1,9 @@
 <template>
     <section class="container-fluid" v-if="user">
 
-       <h2> Notfallinformationen von </h2>
-        <div class="form-address">
-            {{user.affected.first_name}}
-            {{user.affected.last_name}} <br />
+        <h1>{{user.affected.first_name}} {{user.affected.last_name}}</h1>
+
+        <div class="form-address item">
             {{user.affected.street}}
             {{user.affected.street_number}} <br />
             {{user.affected.zip}}
@@ -14,7 +13,6 @@
             {{user.affected.birth_date}} <br />
         </div>
 
-        <br />
         <h2> Medizinische Informationen </h2>
 
         <div
@@ -78,12 +76,10 @@
          </div>
         <br />
 
-
         <button type="submit" class="btn btn-primary">
-                <fa :icon="['fas', 'trash']" />
-                Entfernen
-            </button>
-
+            <fa :icon="['fas', 'trash']" />
+            Entfernen
+        </button>
 
     </section>
 
@@ -123,16 +119,8 @@ export default {
 
 <style>
 
-    div.form-address {
-        font-size: 80%;
-        margin: 0;
-        padding: 0;
-        }
-
     .item {
-        margin: 10px;
-        margin-left: 0px;
-        margin-top: 0px;
+        margin: 0 10px 30px 0;
     }
 
     p {
@@ -142,11 +130,11 @@ export default {
 
     p.label {
         color: #999;
-        font-size: 80%;
+        font-size: 85%;
     }
 
     div.form-group {
-        margin: 0;
+        margin: 0 0 5px 0;
         padding: 0;
     }
 

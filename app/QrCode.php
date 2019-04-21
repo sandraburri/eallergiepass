@@ -42,7 +42,7 @@ class QrCode
         $qrCode = '';
         try
         {
-            $url = config('eallergiepass.url') . '/spa/add/' . $affected->unique_id;
+            $url = config('eallergiepass.url') . '/spa/#/add/' . $affected->unique_id;
             $qrCode =  QrCode::getImageTag($url, $size);
         } catch (Exception $e) {
             $qrCode = $e;

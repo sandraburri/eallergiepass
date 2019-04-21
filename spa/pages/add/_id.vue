@@ -1,8 +1,6 @@
 <template>
     <section class="container-fluid">
 
-        <h1>Profil hinzufügen</h1>
-
         <div class="loading" v-if="loading">
             Lade Daten ...
         </div>

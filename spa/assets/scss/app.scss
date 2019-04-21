@@ -13,6 +13,11 @@
         height: 30px;
     }
 
+    nav.breadcrumb {
+        margin-top: -2em;
+        background-color: lighten($primary, 20%);
+    }
+
 }
 
 html {
@@ -55,25 +60,40 @@ body {
     }
 }
 
-.list-group-item,
-.list-group-item:last-child {
+.list-group li {
+    list-style: none;
+}
+
+.list-group-item {
+    border: none;
+}
+
+.list-group-item a {
+    border-width: 1px 1px 0 1px;
+    border-style: solid;
+    border-color: darken($primary, 10%);
     border-radius: 0 !important;
+}
+
+.list-group-item a:last-child {
+    border-radius: 0 !important;
+    border-width: 1px 1px 1px 1px;
 }
 
 .list-group-item-action {
     padding: 0;
-    border: 1px solid #ccc;
     border-radius: 0;
 
     a {
         display: block;
-        background: #fff;
-        color: #000;
+        background: lighten($primary, 47%);
+        color: #333;
+        font-weight: 500;
         padding: 1rem 1rem 1rem 2.5rem;
         text-decoration: none;
 
         &:hover  {
-            background: #eee;
+            background: lighten($primary, 30%);
         }
     }
 
@@ -81,41 +101,55 @@ body {
         position: absolute;
         top: 1rem;
         left: .8rem;
+        color: #333;
     }
 
     .icon-right {
         position: absolute;
         top: 1rem;
         right: .8rem;
-        color: #aaa;
+        color: #888;
+    }
+}
+
+.list-group.no-border {
+    .list-group-item a {
+        border: none;
+    }
+}
+
+.list-group.no-background {
+    a {
+        background: transparent;
     }
 }
 
 
 h1 {
     font-size: 140%;
+    font-weight: bold;
     margin: 0 0 1rem 0;
 }
 
 h2 {
-    color: #999;
+    color: #666;
     font-size: 120%;
-    font: bold;
-    margin: 0;
+    font-weight: 600;
+    margin: 1rem 0 0.3em 0;
     padding: 0;
 }
 
 h3 {
-    color: #999;
+    color: #666;
     font-size: 120%;
-    font: bold;
+    font-weight: 600;
     margin: 1rem 0 0.3em 0;
     padding: 0;
 }
 
 h4 {
     font-size: 120%;
-    font: bold;
+    font-weight: 600;
     margin: 1rem 0 0.3em 0;
     padding: 0;
 }

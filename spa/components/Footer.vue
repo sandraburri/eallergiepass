@@ -2,9 +2,14 @@
     <footer class="footer">
         <div class="container-fluid">
             <ul>
-                <li><a href="#">Datenschutzerklärung</a></li>
-                <li><a href="#">Nutzungsbedingungen</a></li>
-                <li><a href="#">Impressum</a></li>
+                <li>
+                    <nuxt-link to="/legal/privacy">Datenschutzerklärung</nuxt-link>
+                </li>
+                <li>
+                    <nuxt-link to="/legal/tos">Nutzungsbedingungen</nuxt-link>
+                <li>
+                    <nuxt-link to="/legal/impressum">Impressum</nuxt-link>
+                </li>
             </ul>
         </div>
     </footer>
