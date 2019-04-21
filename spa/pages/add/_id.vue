@@ -44,7 +44,8 @@ export default {
         })
 
         try {
-            let { data } = await this.$axios.$get(`http://eallergiepass.test/api/users/${userId}`);
+            let url = `${process.env.NUXT_ENV_API_URL}/api/users/${userId}`;
+            let { data } = await this.$axios.$get(url);
 
             let users = localStorage['users'] || '';
             if (users) {
@@ -57,6 +58,7 @@ export default {
 
             this.$router.push('/');
         } catch(e) {
+            console.log(e);
         } finally {
             this.loading = false;
         }

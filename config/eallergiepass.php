@@ -2,5 +2,5 @@
 <?php
 
 return [
-    "url" => "https://eallergiepass.test"
+    "url" => "https://eallergiepass.ch"
 ];

@@ -93,7 +93,7 @@ export default {
 
     proxy: {
         '/api': {
-            target: 'https://eallergiepass.test',
+            target: 'https://eallergiepass.ch',
             pathRewrite: {
                 '^/api': '/'
             }

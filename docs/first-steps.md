@@ -24,7 +24,7 @@ This guide is loosely based on [How to install Laravel 5 with Xampp (Windows)](h
 ## Add virtual host
 
 * Open `C:\Windows\System32\drivers\etc\hosts` in your favourite editor
-* Add the following line `127.0.0.1           eallergiepass.test`
+* Add the following line `127.0.0.1           eallergiepass.ch`
 * Save (might need administrative permission)
 
 ## Configure apache virtual host
@@ -33,13 +33,13 @@ This guide is loosely based on [How to install Laravel 5 with Xampp (Windows)](h
 * Add the following section
 
 ```xml
-<VirtualHost eallergiepass.test:443>
+<VirtualHost eallergiepass.ch:443>
     DocumentRoot "c:/projects/eallergiepass/public/"
-    ServerName eallergiepass.test
-    ServerAlias *.eallergiepass.test
+    ServerName eallergiepass.ch
+    ServerAlias *.eallergiepass.ch
     SSLEngine On
-    SSLCertificateFile "c:/xampp/apache/crt/eallergiepass.test/server.crt"
-    SSLCertificateKeyFile "c:/xampp/apache/crt/eallergiepass.test/server.key"
+    SSLCertificateFile "c:/xampp/apache/crt/eallergiepass.ch/server.crt"
+    SSLCertificateKeyFile "c:/xampp/apache/crt/eallergiepass.ch/server.key"
     <Directory "c:/projects/eallergiepass/">
         Options Indexes FollowSymLinks
         AllowOverride All
@@ -54,9 +54,9 @@ This guide is loosely based on [How to install Laravel 5 with Xampp (Windows)](h
 * Create a directory `c:\xampp\apache\crt`, download the files *cert.conf* and *make-cert.bat*.
 * Open a shell in this location
 * Execute `make-cert.bat`
-* For the *Enter domain* prompt, add `eallergiepass.test`
+* For the *Enter domain* prompt, add `eallergiepass.ch`
 * Press Enter (default/skip) for all other promps, until
-* For the *Common Name* prompt, add `eallergiepass.test`
+* For the *Common Name* prompt, add `eallergiepass.ch`
 * Import the certificate to the *Trusted root certification authorities* as described.
 
 ## Create database
