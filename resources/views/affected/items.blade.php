@@ -12,6 +12,13 @@
                 <i class="fa fa-btn fa-print"></i>
                 Allergiepass drucken
             </a>
+            <a
+                href="{{action("MidataController@export", ["id" => $affected->id])}}"
+                class="btn btn-secondary ml-2"
+                >
+                <i class="fa fa-btn fa-cloud-upload"></i>
+                EPD Export
+            </a>
         </div>
         <div class="col-md-4 text-right pr-4">
             {!! $qrCode !!}

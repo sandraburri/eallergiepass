@@ -39,4 +39,6 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/pdf/{id}', 'PdfController@index');
     Route::get('/pdf/html/{id}', 'PdfController@html');
 
+    Route::get('/midata/{id}', 'MidataController@export');
+
 });
