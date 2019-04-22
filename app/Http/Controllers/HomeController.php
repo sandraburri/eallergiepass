@@ -1,12 +1,13 @@
 <?php
 
+    //This is the controller so that the first view for the
+    //care provider is displayed correctly.
+
 namespace App\Http\Controllers;
 
 use Auth;
-use Illuminate\Http\Request;
 use App\CareProvider;
 use App\Address;
-use App\Affected;
 
 class HomeController extends Controller
 {
@@ -46,4 +47,3 @@ class HomeController extends Controller
     );
     }
 }
-

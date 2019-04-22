@@ -1,6 +1,6 @@
 {{--
-    Here the service provider records the affected allergens data,
-    which are later used for the allergy passport of the person concerned.
+    Here the care provider records the affected allergens data,
+    which are later used for the allergy passport of the affected person.
  --}}
 
  <form method="POST" action="{{action('AffectedItemsController@store')}}">

@@ -1,3 +1,10 @@
+
+<!--
+This is the main view for the affected persons,
+once you have scanned the QR code, they always
+get to this page by means of an icon on their mobile phone.
+-->
+
 <template>
     <section class="container-fluid">
 
@@ -72,21 +79,6 @@
                     </li>
                 </ul>
             </div>
-
-            <!--
-            <div class="mt-2">
-                <ul class="list-group">
-                    <li class="list-group-item list-group-item-action">
-                        <nuxt-link to="/emergency/help">
-                            Notfallanleitung
-                            <span class="icon-left">
-                                <fa :icon="['fas', 'exclamation-circle']" />
-                            </span>
-                        </nuxt-link>
-                    </li>
-                </ul>
-            </div>
-            -->
 
             <div>
                 <h3>Informationen</h3>
@@ -225,6 +217,4 @@ export default {
         background-color:#8DCB1F;
     }
 
-
 </style>
-

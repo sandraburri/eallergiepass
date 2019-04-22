@@ -1,5 +1,11 @@
+<!--
+This is the generally valid emergency manual,
+if the affected person clicks on the emergency
+manual on his main view, he receives this emergency manual.
+-->
+
 <template>
-     <section class="container-fluid">       
+     <section class="container-fluid">
 
         <div class="form-help">
             <h3>Notfallanleitung</h3>

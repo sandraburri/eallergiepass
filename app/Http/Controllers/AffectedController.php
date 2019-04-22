@@ -1,5 +1,10 @@
 <?php
 
+    //This is the controller for the affected person. The address,
+    //the data subjects specific specifications, the care provider
+    //and the allergy data are defined correctly for each data subject
+    //or output correctly.
+
 namespace App\Http\Controllers;
 
 use Auth;

@@ -1,5 +1,8 @@
 <?php
 
+    //This is the controller for the medical practice
+    //registration of the care provider.
+
 namespace App\Http\Controllers;
 
 use Auth;

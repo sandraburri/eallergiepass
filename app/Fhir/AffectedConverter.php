@@ -1,5 +1,9 @@
 <?php
 
+//This is the FHIR converter for affected persons. All information about the care provider,
+//which is output on the haptic allergy passport for the affected person, is converted here into FHIR,
+//so that it can be stored on MIDATA (simulated EPD).
+
 namespace App\Fhir;
 
 use App\Affected;

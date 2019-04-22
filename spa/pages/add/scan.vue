@@ -1,3 +1,12 @@
+<!--
+If the affected person enters https://eallergiepass.ch
+in his browser, he comes to this conclusion. Here he can
+now scan the QR code from his haptic allergy passport.
+If the affected person wants to add another profile of
+another affected person to his main view, he will automatically
+be taken to this page as well.
+-->
+
 <template>
     <section class="container-fluid">
 
@@ -107,4 +116,3 @@
     }
 
 </style>
-

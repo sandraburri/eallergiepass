@@ -1,5 +1,8 @@
 <?php
 
+    //This is the controller so that the data that appears in the
+    //PDF for the care provider can be uploaded to MIDATA (simulated EPD).
+
 namespace App\Http\Controllers;
 
 use App\Affected;

@@ -1,3 +1,8 @@
+<!--
+This is the allergy passport, if the affected person clicks on his profile,
+he receives his allergy passport, with all relevant information certified by a specialist.
+-->
+
 <template>
     <section class="container-fluid" v-if="user">
 

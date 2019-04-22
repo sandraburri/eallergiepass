@@ -5,8 +5,8 @@
 
     <div class="col">
     {{--
-        Here the service provider records the affected data,
-        which are later used for the allergy passport of the person concerned.
+        Here the care provider records the affected data,
+        which are later used for the allergy passport of the affected person.
     --}}
 
     <form method="POST" action="{{action('AffectedController@store')}}">

@@ -12,7 +12,6 @@
     @include('includes.search-affected-form', [
     ])
 
-
     {{--
     <div class="col">
         <div class="col-md-12">
@@ -31,10 +30,6 @@
     </div>
     --}}
 
-
-
 </div>
-
-
 
 @endsection

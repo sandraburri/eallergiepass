@@ -1,3 +1,8 @@
+<!--
+The affected person can enter an emergency contact here.
+This contact data is stored locally on the affected person's mobile phone.
+-->
+
 <template>
     <section class="container-fluid">
 
@@ -46,4 +51,3 @@
     }
 
 </style>
-

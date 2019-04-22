@@ -1,8 +1,8 @@
 {{--
-    This is for the service provider, who enters the AHV number of the person concerned here.
-    If the AHV number has already been entered in the DB, the service provider is taken to the
+    This is for the care provider, who enters the AHV number of the affected person here.
+    If the AHV number has already been entered in the DB, the care provider is taken to the
     already completed entry view and can continue working on it there. If the AHV number does
-    not yet exist, the service provider arrives at an empty view and must first complete the
+    not yet exist, the care provider arrives at an empty view and must first complete the
     patient data there.
 --}}
 

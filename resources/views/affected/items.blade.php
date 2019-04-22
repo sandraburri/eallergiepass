@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+    {{--
+        Here the care provider registers the allergies, intolerances and
+        incompatibilities of the affected person.
+    --}}
+
 @section('content')
 <div class="container-fluid">
     <div class="row">

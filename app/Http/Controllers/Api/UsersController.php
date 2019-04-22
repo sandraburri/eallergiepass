@@ -1,5 +1,8 @@
 <?php
 
+    //This controller manages the affected persons and the care providers.
+    //Each user receives an ID and can be identified by it.
+
 namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
