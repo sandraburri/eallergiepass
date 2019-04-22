@@ -1,3 +1,9 @@
+{{--
+    This page defines the appearance and content of the haptic allergy passport,
+    which the care provider can print out using the allergy passport and give
+    to the affected person.
+ --}}
+
 @php
 $table_width = 980;
 $table_height = 100;
@@ -49,6 +55,12 @@ $inner_style = "$align_top; width: " . $inner_width ."px; $border_right; padding
                     {{$careprovider->address->zip}}
                     {{$careprovider->address->city}}<br />
                     {{$careprovider->address->phone_number}} <br />
+
+                    <div style="font-size: 8px; width: 160px">
+                        a) Sie können den QR-Code mit einem beliebigen QR-Code-Scanner einlesen<br />
+                        b) Sie können in Ihrem Smartphone im Browser https://eallergiepass.ch eingeben
+                    </div>
+
                 </td>
 
                 <td style="{{$align_top}}; width: {{$col2}}px; {{$border_right}}; {{$col_padding}};">
@@ -114,9 +126,6 @@ $inner_style = "$align_top; width: " . $inner_width ."px; $border_right; padding
                 <td style="{{$col_padding}}">
                     <div style="margin: 0 0 10px 0">
                         {!! $qrCode !!}
-                    </div>
-                    <div style="font-size: 10px; width: 160px">
-                        Beschreibung Vorgehen via Browser oder QR-Code scannen....
                     </div>
                 </td>
 
