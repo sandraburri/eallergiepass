@@ -38,7 +38,7 @@ class CareProviderConverter
         $fhirAddress->setCountry("CH");
 
         $fhirDiscipline = new FHIRExtension();
-        $fhirDiscipline->setUrl("http://eallergiepass.ch/fhir/StructureDefinition/organization-contact-discipline");
+        $fhirDiscipline->setUrl("https://eallergiepass.ch/fhir/StructureDefinition/organization-contact-discipline");
         $fhirDiscipline->setId(100);
         $fhirDiscipline->setValueString($care_provider->discipline);
 

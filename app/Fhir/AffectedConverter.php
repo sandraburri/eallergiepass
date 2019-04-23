@@ -57,7 +57,7 @@ class AffectedConverter
         $fhirBirthDate->setValue($affected->birth_date->format('Y-m-d'));
 
         $fhirAhvNumber = new FHIRExtension();
-        $fhirAhvNumber->setUrl("http://eallergiepass.ch/fhir/StructureDefinition/ahv-number");
+        $fhirAhvNumber->setUrl("https://eallergiepass.ch/fhir/StructureDefinition/ahv-number");
         $fhirAhvNumber->setId(100);
         $fhirAhvNumber->setValueString($affected->ahv_number);
 

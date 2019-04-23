@@ -19,22 +19,22 @@ class AffectedItemsConverter
     public static function convert(AffectedItem $item)
     {
         $fhirVerifiedBy = new FHIRExtension();
-        $fhirVerifiedBy->setUrl("http://eallergiepass.ch/fhir/StructureDefinition/allergyIntolerance-verified_by");
+        $fhirVerifiedBy->setUrl("https://eallergiepass.ch/fhir/StructureDefinition/allergyIntolerance-verified_by");
         $fhirVerifiedBy->setId(101);
         $fhirVerifiedBy->setValueString($item->verified_by);
 
         $fhirSuspicion = new FHIRExtension();
-        $fhirSuspicion->setUrl("http://eallergiepass.ch/fhir/StructureDefinition/allergyIntolerance-suspicion");
+        $fhirSuspicion->setUrl("https://eallergiepass.ch/fhir/StructureDefinition/allergyIntolerance-suspicion");
         $fhirSuspicion->setId(102);
         $fhirSuspicion->setValueString($item->suspicion);
 
         $fhirMedication = new FHIRExtension();
-        $fhirMedication->setUrl("http://eallergiepass.ch/fhir/StructureDefinition/allergyIntolerance-medication");
+        $fhirMedication->setUrl("https://eallergiepass.ch/fhir/StructureDefinition/allergyIntolerance-medication");
         $fhirMedication->setId(103);
         $fhirMedication->setValueString($item->medication);
 
         $fhirEmergencyMedication = new FHIRExtension();
-        $fhirEmergencyMedication->setUrl("http://eallergiepass.ch/fhir/StructureDefinition/allergyIntolerance-emergency_medication");
+        $fhirEmergencyMedication->setUrl("https://eallergiepass.ch/fhir/StructureDefinition/allergyIntolerance-emergency_medication");
         $fhirEmergencyMedication->setId(104);
         $fhirEmergencyMedication->setValueString($item->emergency_medication);
 
