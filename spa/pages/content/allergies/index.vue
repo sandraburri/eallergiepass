@@ -7,9 +7,27 @@ the appropriate topic councellor and from there also again back.
 
 <template>
     <section class="container-fluid">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, libero repellat ex voluptate praesentium impedit perferendis, nemo iure earum distinctio a, reprehenderit labore laboriosam vitae sunt debitis qui aliquam soluta!</p>
+
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-action">
+                <nuxt-link to="/content/allergies/house-mites">
+                    Hausstaubmilbenallergie
+                    <span class="icon-left">
+                        <fa :icon="['fas', 'book']" />
+                    </span>
+                    <span class="icon-right">
+                        <fa :icon="['fas', 'chevron-right']" />
+                    </span>
+                </nuxt-link>
+            </li>
+        </ul>
+
+
     </section>
 </template>
+
+<script>
+</script>
 
 <style>
 </style>
