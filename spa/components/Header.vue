@@ -98,6 +98,7 @@
                     case "/content": return "Inhalte";
                     case "/view": return "Notfallinformationen";
                     case "/content/allergies": return "Allergien";
+                    case "/content/allergies/house-mites": return "Haus­staub­mil­ben­all­er­gie";
                     case "/content/asthma":return "Asthma";
                     case "/content/excema": return "Ekzem / Hautreaktionen";
                     case "/content/intolerance": return "Intoleranzen";
