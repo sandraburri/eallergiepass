@@ -6,7 +6,7 @@
                     <nuxt-link to="/legal/privacy">Datenschutzerklärung</nuxt-link>
                 </li>
                 <li>
-                    <nuxt-link to="/legal/tos">Nutzungsbedingungen</nuxt-link>
+                    <nuxt-link to="/legal/tos">Haftungsausschluss</nuxt-link>
                 <li>
                     <nuxt-link to="/legal/impressum">Impressum</nuxt-link>
                 </li>

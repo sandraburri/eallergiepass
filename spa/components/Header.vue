@@ -106,7 +106,7 @@
                     case "/emergency/help": return "Notfallanleitung";
                     case "/legal/impressum": return "Impressum";
                     case "/legal/privacy": return "Datenschutzerklärung";
-                    case "/legal/tos": return "Nutzungsbedingungen";
+                    case "/legal/tos": return "Haftungsausschluss";
                 }
                 return null;
             },
