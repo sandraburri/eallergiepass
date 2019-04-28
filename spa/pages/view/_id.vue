@@ -81,7 +81,7 @@ he receives his allergy passport, with all relevant information certified by a s
          </div>
         <br />
 
-        <button type="submit" class="btn btn-primary">
+        <button v-on:click="ondelete" class="btn btn-primary">
             <fa :icon="['fas', 'trash']" />
             Entfernen
         </button>
@@ -103,13 +103,8 @@ export default {
     async mounted() {
         let userId = this.$route.params.id;
 
-        let users = localStorage['users'] || '';
-        if (users) {
-            users = JSON.parse(users);
-        }
-
-        users = users || {};
-         if (!Object.keys(users).length) {
+        let users = this.getUsers();
+        if (!Object.keys(users).length) {
             this.$router.push('/');
         }
 
@@ -117,6 +112,26 @@ export default {
     },
 
     methods: {
+        getUsers: function() {
+            let users = localStorage['users'] || '';
+            if (users) {
+                users = JSON.parse(users);
+            }
+
+            users = users || {};
+            return users;
+        },
+
+        ondelete: function (event) {
+            let users = this.getUsers();
+
+            let userId = this.$route.params.id;
+            delete users[userId];
+
+            localStorage['users'] = JSON.stringify(users);
+
+            this.$router.push('/');
+        }
     }
 }
 
