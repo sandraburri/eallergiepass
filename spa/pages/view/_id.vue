@@ -81,7 +81,7 @@ he receives his allergy passport, with all relevant information certified by a s
          </div>
         <br />
 
-        <button v-on:click="ondelete" class="btn btn-primary">
+        <button v-on:click="onDelete" class="btn btn-primary">
             <fa :icon="['fas', 'trash']" />
             Entfernen
         </button>
@@ -93,6 +93,12 @@ he receives his allergy passport, with all relevant information certified by a s
 <script>
 export default {
 
+    computed: {
+        users() {
+            return this.$store.state.users.items || {};
+        }
+    },
+
     data() {
         return {
             loading: true,
@@ -103,33 +109,18 @@ export default {
     async mounted() {
         let userId = this.$route.params.id;
 
-        let users = this.getUsers();
-        if (!Object.keys(users).length) {
+        if (!Object.keys(this.users).length) {
             this.$router.push('/');
         }
 
-        this.user = users[userId];
+        this.user = this.users[userId];
     },
 
     methods: {
-        getUsers: function() {
-            let users = localStorage['users'] || '';
-            if (users) {
-                users = JSON.parse(users);
-            }
 
-            users = users || {};
-            return users;
-        },
-
-        ondelete: function (event) {
-            let users = this.getUsers();
-
+        onDelete: function (event) {
             let userId = this.$route.params.id;
-            delete users[userId];
-
-            localStorage['users'] = JSON.stringify(users);
-
+            this.$store.commit('users/remove', userId);
             this.$router.push('/');
         }
     }
