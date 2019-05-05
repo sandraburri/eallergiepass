@@ -92,7 +92,7 @@
         @endphp
 
         <footer class="footer">
-            <div class="container">
+            <div class="container-fluid">
                 <ul>
                     <li><a href="/legal/privacy">Datenschutzerklärung</a></li>
                     <li><a href="/legal/tos">Haftungsausschluss</a></li>
