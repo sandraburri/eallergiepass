@@ -42,7 +42,7 @@ $inner_style = "$align_top; width: " . $inner_width ."px; $border_right; padding
 
 <body>
     <div style="border:1px solid #000;padding: 5px; background: #f5f5f5">
-        <table style="height:{{$table_height}}px;width:{{$table_width}}px;{{$table_border}}; border-collapse: collapse;">
+        <table style="height:{{$table_height}}px;width:{{$table_width}}px;{{$table_border}}; text-align:justify; border-collapse: collapse;">
             <tr>
                 <td style="{{$align_top}}; width: {{$col1}}px; {{$border_right}}; {{$col_padding}}">
                     {{$careprovider->name}}<br />
