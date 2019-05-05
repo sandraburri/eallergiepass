@@ -25,6 +25,12 @@
 <script>
 export default {
 
+    computed: {
+        users() {
+            return this.$store.state.users.items || {};
+        }
+    },
+
     data() {
         return {
             loading: true,
@@ -45,18 +51,12 @@ export default {
             let url = `${process.env.NUXT_ENV_API_URL}/api/users/${userId}`;
             let { data } = await this.$axios.$get(url);
 
-            let users = localStorage['users'] || '';
-            if (users) {
-                users = JSON.parse(users);
-            }
-
-            users = users || {};
-            users[userId] = data;
-            localStorage['users'] = JSON.stringify(users);
+            data.userId = userId;
+            this.$store.commit('users/add', data);
 
             this.$router.push('/');
         } catch(e) {
-            console.log(e);
+            console.debug(e);
         } finally {
             this.loading = false;
         }

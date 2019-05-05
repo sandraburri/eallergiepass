@@ -20,6 +20,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::view('/legal/impressum', 'legal/impressum');
+Route::view('/legal/privacy', 'legal/privacy');
+Route::view('/legal/tos', 'legal/tos');
+
 Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/home', 'HomeController@index')->name('home');
@@ -40,5 +44,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/pdf/html/{id}', 'PdfController@html');
 
     Route::get('/midata/{id}', 'MidataController@export');
+
+  
 
 });
