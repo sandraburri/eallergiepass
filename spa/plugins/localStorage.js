@@ -8,7 +8,9 @@ export default ({ store }) => {
         console.debug('onNuxtReady for vuex-persistedstate', store)
         store.commit('nuxtReady', true)
 
-        const options = {}
+        const options = {
+            paths: ['users', 'emergencyContacts']
+        }
         createPersistedState(options)(store)
 
         store.commit('persistedStateReady', true)
