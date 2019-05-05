@@ -72,12 +72,15 @@ be taken to this page as well.
                 var token = '/spa/#/add/';
                 if (s.indexOf(token) !== -1) {
                     var uniqueId = s = s.split(token)[1];
-                    location.replace(token + uniqueId)
+                    var url = token + uniqueId;
+                    console.debug('redirecting to add user page', url);
+                    //location.replace(url, true)
+                    this.$router.push(uniqueId);
                 }
             },
 
             async onInit (promise) {
-                console.log("onInit");
+                console.debug("onInit");
                 try {
                     await promise;
                 } catch (error) {

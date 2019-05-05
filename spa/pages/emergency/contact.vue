@@ -11,12 +11,12 @@ This contact data is stored locally on the affected person's mobile phone.
         </div>
 
         <div class="form-contains">
-            <input v-model="first_name" placeholder="Vorname">
-            <input v-model="last_name" placeholder="Name"> <br />
+            <input v-model="firstName" placeholder="Vorname">
+            <input v-model="lastName" placeholder="Name"> <br />
             <br />
-            <input v-model="phone_number" placeholder="Telefonnummer"> <br />
+            <input v-model="phoneNumber" placeholder="Telefonnummer"> <br />
             <br />
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary" v-on:click="onSave">
                  <fa :icon="['fas', 'save']" />
                 Speichern
             </button>
@@ -30,9 +30,23 @@ This contact data is stored locally on the affected person's mobile phone.
     export default {
         data() {
             return {
-                first_name: null,
-                last_name: null,
-                phone_number: null
+                firstName: null,
+                lastName: null,
+                phoneNumber: null
+            }
+        },
+
+        methods: {
+            onSave: function (event) {
+                let userId = this.$route.params.id;
+
+                this.$store.commit('emergencyContacts/set', {
+                    firstName: this.firstName,
+                    lastName: this.lastName,
+                    phoneNumber: this.phoneNumber
+                });
+
+                this.$router.push('/');
             }
         }
     }

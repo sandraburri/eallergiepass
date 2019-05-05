@@ -46,10 +46,15 @@ get to this page by means of an icon on their mobile phone.
             <div>
                 <h3>Notfallkontakt</h3>
                 <ul class="list-group">
-                    <li class="list-group-item list-group-item-action" v-if="emergency_contact">
-                        <a :href="'tel:' + emergency_contact.phone_number">
-                            {{emergency_contact.first_name}}
-                            {{emergency_contact.last_name}}
+
+
+                    <li
+                        v-for="contact in (emergencyContacts || [])"
+                        v-bind:key="(contact.phoneNumber || '')"
+                        class="list-group-item list-group-item-action">
+                        <a :href="'tel:' + (contact.phoneNumber || '')">
+                            {{contact.firstName || ''}}
+                            {{contact.lastName || ''}}
                             <span class="icon-left">
                                 <fa :icon="['fas', 'user']" />
                             </span>
@@ -167,41 +172,52 @@ get to this page by means of an icon on their mobile phone.
 
 <script>
 
+import { mapGetters, mapState } from 'vuex'
+
 export default {
+
+    computed: {
+        ...mapState(['persistedStateReady']),
+        ...mapGetters({
+            'users': 'users/get',
+            'emergencyContacts': 'emergencyContacts/get'
+        }),
+        hasUsers() {
+            const result = Object.keys(this.users).length > 0
+            console.debug('hasUsers()', result)
+            return result
+        }
+    },
+
+    watch: {
+        persistedStateReady(newValue, oldValue) {
+            this.loading = false;
+            this.redirectIfEmpty();
+        }
+    },
 
     data() {
         return {
-            loading: true,
-            users: [],
-            //emergency_contact: null,
-            emergency_contact: {
-                first_name: "Erika",
-                last_name: "Muster",
-                phone_number: "+41 31 333 44 55"
-            }
+            loading: true
         }
     },
 
     async mounted() {
         this.title = "eAllergiepass";
 
-        let users = localStorage['users'] || '';
-        if (users) {
-            users = JSON.parse(users);
+        if (this.persistedStateReady) {
+            this.redirectIfEmpty();
         }
-
-        users = users || {};
-
-        if (!Object.keys(users).length) {
-            this.$router.push('/add/scan');
-            return;
-        }
-
-        this.users = users;
-        this.loading = false;
     },
 
     methods: {
+        redirectIfEmpty() {
+            if (!this.hasUsers) {
+                this.$router.push('/add/scan');
+            } else {
+                this.loading = false;
+            }
+        }
     }
 }
 

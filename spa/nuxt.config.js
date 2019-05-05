@@ -31,7 +31,10 @@ export default {
 
     css: ['~/assets/scss/app.scss'],
 
-    plugins: ['~/plugins/globals'],
+    plugins: [
+        '~/plugins/globals',
+        { src: '~/plugins/localStorage.js', ssr: false }
+    ],
 
     modules: [
         // Doc: https://axios.nuxtjs.org/usage
