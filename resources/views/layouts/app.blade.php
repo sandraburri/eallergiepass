@@ -94,9 +94,9 @@
         <footer class="footer">
             <div class="container">
                 <ul>
-                    <li><a href="#">Datenschutzerklärung</a></li>
-                    <li><a href="#">Haftungsausschluss</a></li>
-                    <li><a href="#">Impressum</a></li>
+                    <li><a href="/legal/privacy">Datenschutzerklärung</a></li>
+                    <li><a href="/legal/tos">Haftungsausschluss</a></li>
+                    <li><a href="/legal/impressum">Impressum</a></li>
 
                 </ul>
             </div>
