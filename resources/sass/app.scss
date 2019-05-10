@@ -87,6 +87,12 @@ body {
     flex: 1;
     padding: 0.75rem;
     align-items: start;
+    flex-grow: 1;
+}
+
+.items-table-col.suspicion {
+    flex-shrink: 1;
+    flex-grow: 0;
 }
 
 .items-table .type,
