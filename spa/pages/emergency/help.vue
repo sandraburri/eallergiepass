@@ -8,7 +8,6 @@ manual on his main view, he receives this emergency manual.
      <section class="container-fluid">
 
         <div class="form-help">
-            <h3>Notfallanleitung</h3>
             1. Bitten Sie jemanden vor Ort um Hilfe <br />
             2. Notruf alarmieren 144 <br />
             3. Ort sichern / sichern lassen <br />
