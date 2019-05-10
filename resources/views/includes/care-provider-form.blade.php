@@ -17,7 +17,7 @@
 
         @if ($errors->any())
         <div class="alert alert-danger">
-            <b>Fehler</b> Bitte korrigieren Sie die Fehler im Formular.
+            <b>Bitte korrigieren Sie die Fehler im Formular</b>
         </div>
         @endif
 
