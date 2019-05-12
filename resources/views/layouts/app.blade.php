@@ -26,6 +26,9 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{url('/home')}}" title="{{config('app.name')}}">
                     <img src="/images/logo/logo.png" alt="" />
+                    @if (strcmp($_SERVER['SERVER_ADDR'], '127.0.0.1') == 0)
+                        <span style="color:yellow;font-size: 12px; vertical-position:top; margin: 0 0 0 1rem">DEV</span>
+                    @endif
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
