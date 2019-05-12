@@ -79,7 +79,7 @@ get to this page by means of an icon on their mobile phone.
                             <span class="icon-left">
                                 <fa :icon="['fas', 'pen']" />
                             </span>
-                            Notfallkontakt bearbeiten
+                            Notfallkontakt {{emergencyContacts.length ? "bearbeiten" : "erfassen"}}
                         </nuxt-link>
                     </li>
                 </ul>
