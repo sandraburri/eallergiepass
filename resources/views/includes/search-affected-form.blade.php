@@ -7,6 +7,7 @@
 --}}
 
 <div class="col">
+    @if ($careProvider->id && $address->id)
 
     <form method="GET" action="{{action('AffectedController@search')}}">
 
@@ -55,5 +56,7 @@
             Suchen
         </button>
     </form>
+
+    @endif
 
 </div>
