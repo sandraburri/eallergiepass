@@ -42,7 +42,13 @@ class HomeController extends Controller
 
         return view('home', [
             'careProvider' => $careProvider,
-            'address' => $address
+            'address' => $address,
+            'careProviderTitle' => [
+                'Dr. med',
+                'Prof. Dr. med',
+                'med. pract',
+                'PD Dr. med'
+            ]
         ]
     );
     }
