@@ -161,10 +161,28 @@
             <input type="hidden" name="affected_id" value="{{$affected ? $affected->id : ''}}" />
             <input type="hidden" name="address_id" value="{{$address ? $address->id : ''}}" />
 
+
+
+            @if ($address && $address->id)
             <button type="submit" class="btn btn-primary">
                 <i class="fa fa-btn fa-save"></i>
                 Speichern
             </button>
+            <button type="forward" class="btn btn-primary">
+                <i class="fa fa-btn fa-forward"></i>
+                Weiter
+            </button>
+
+
+            @else
+            <button type="submit" class="btn btn-primary">
+                <i class="fa fa-btn fa-save"></i>
+                Speichern
+            </button>
+            @endif
+
+
+
 
         </form>
 
