@@ -43,18 +43,13 @@ he receives his allergy passport, with all relevant information certified by a s
                 </div>
 
                 <div class="form-group" v-if="item.verification">
-                    <p class="label">Nachgewisen am</p>
+                    <p class="label">Nachgewiesen am</p>
                     <p>{{item.verification}}</p>
                 </div>
 
                 <div class="form-group" v-if="item.suspicion">
                     <p class="label">Verdacht auf</p>
                     <p> Ja </p>
-                </div>
-
-                <div class="form-group" v-if="item.medication">
-                    <p class="label">Medikamente</p>
-                    <p>{{item.medication}}</p>
                 </div>
 
                 <div class="form-group" v-if="item.emergency_medication">
