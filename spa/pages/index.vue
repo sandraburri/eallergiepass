@@ -44,7 +44,7 @@ get to this page by means of an icon on their mobile phone.
             </div>
 
             <div>
-                <h3>Notfallkontakt</h3>
+                <h3 style="color:red">Notfallkontakt</h3>
                 <ul class="list-group">
 
 
@@ -63,7 +63,32 @@ get to this page by means of an icon on their mobile phone.
                             </span>
                         </a>
                     </li>
-                    <li class="list-group-item list-group-item-action">
+                    
+                        <li class="list-group-item list-group-item-action">
+                         <a href="tel: 144" target="_blank">
+                            Ambulanz
+                            <span class="icon-left">
+                                <fa :icon="['fas', 'ambulance']" />
+                            </span>
+                            <span class="icon-right">
+                                <fa :icon="['fas', 'phone']" />
+                            </span>
+                        </a>
+                    </li>
+                  <li class="list-group-item list-group-item-action">
+                         <a href="tel: 112" target="_blank">
+                            Internationaler Rettungsdienst
+                            <span class="icon-left">
+                                <fa :icon="['fas', 'ambulance']" />
+                            </span>
+                            <span class="icon-right">
+                                <fa :icon="['fas', 'phone']" />
+                            </span>
+                        </a>
+                    </li>
+
+
+                     <li class="list-group-item list-group-item-action">
                         <nuxt-link to="/emergency/help">
                             Notfallanleitung
                             <span class="icon-left">
@@ -71,7 +96,11 @@ get to this page by means of an icon on their mobile phone.
                             </span>
                         </nuxt-link>
                     </li>
-                </ul>
+                    </ul>
+               
+
+
+              
 
                 <ul class="list-group no-border no-background">
                     <li class="list-group-item list-group-item-action">
@@ -232,5 +261,6 @@ export default {
     .list-group-item list-group-item-action active {
         background-color:#8DCB1F;
     }
+    
 
 </style>

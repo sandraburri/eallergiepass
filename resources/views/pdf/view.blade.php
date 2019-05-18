@@ -84,8 +84,8 @@ $inner_style = "$align_top; width: " . $inner_width ."px; $border_right; padding
                         {{$affected->address->phone_number}}<br />
                         {{$affected->birth_date->format('d.m.Y')}}<br />
                         {{$affected->ahv_number}}<br />
-                        Notfallkontakt:<br />
-                        Vorname / Name:<br />
+                       <a style="font-weight:bold">Notfallkontakt: </a><br />
+                       Vorname / Name:<br />
                         _______________________________________<br />
                         Telefonnummer:<br />
                         _______________________________________<br />
