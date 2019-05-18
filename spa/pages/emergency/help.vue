@@ -31,6 +31,7 @@ manual on his main view, he receives this emergency manual.
     div.form-help {
         margin-top: 15px;
         margin-left: 15px;
+        font-size: 20px;
     }
 
 </style>
