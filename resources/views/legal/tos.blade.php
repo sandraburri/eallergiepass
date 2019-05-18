@@ -7,7 +7,7 @@
     <section class="container-fluid">
         <h2>Haftungsausschluss</h2>
 
-Die Progressive Web Applikation www.eallergiepass.ch stellt allgemeine und aktuelle Informationen zu den Themenbereichen «Allergien, Intoleranzen, Ekzeme/Hautreaktionen, Asthma» zur Verfügung. Es ist eine Anleitung über das Vorgehen in Notfallsituationen hinterlegt, welche allgemein für Notfälle gültig und nicht individuell auf die Allergien angepasst ist. Die Web Applikation bietet die Möglichkeit, vermutete oder durch Fachpersonen bestätigte Allergien, Intoleranzen und Unverträglichkeiten zu vermerken.<br />
+Die Progressive Web Applikation www.eallergiepass.ch stellt allgemeine und aktuelle Informationen zu den Themenbereichen «Allergien, Intoleranzen, Ekzeme/Hautreaktionen, Asthma» zur Verfügung. Es ist eine Anleitung über das Vorgehen in Notfallsituationen hinterlegt, welche allgemein für Notfälle gültig und nicht individuell auf die Allergien angepasst ist. Die Web Applikation bietet die Möglichkeit, vermutete oder durch Fachpersonen bestätigte Allergien und Intoleranzen zu vermerken.<br />
 <br />
 Die Inhalte der Web Applikation für Leistungserbringer und der Progressiven Web Applikation für Betroffene wurden mit grösstmöglicher Sorgfalt und bestem Gewissen erstellt. Dennoch wird keine Gewähr für die Aktualität, Vollständigkeit und Richtigkeit der bereitgestellten Inhalte übernommen, und jegliche Haftung wird seitens der Betreiber abgelehnt. Das gilt auch für Massnahmen, die auf der Grundlage der zur Verfügung gestellten Informationen ergriffen werden.<br />
 <br />
@@ -29,8 +29,8 @@ Stand: April 2019<br />
 
         </div>
 
- @endsection      
-  
+ @endsection
+
 
 
 
