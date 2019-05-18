@@ -37,8 +37,7 @@ class AffectedController extends Controller
 
         $affectedItems = [
             'allergy' => [],
-            'intolerance' => [],
-            'incompatibility' => []
+            'intolerance' => []
         ];
         foreach (AffectedItem::where("affected_id", $affected->id)->get() as $item)
         {

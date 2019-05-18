@@ -39,8 +39,7 @@ class UsersController extends \App\Http\Controllers\Controller
 
         $jsonAffectedItems = [
             'allergy' => [],
-            'intolerance' => [],
-            'incompatibility' => []
+            'intolerance' => []
         ];
 
         foreach (AffectedItem::where("affected_id", $affected->id)->get() as $item)
@@ -50,7 +49,6 @@ class UsersController extends \App\Http\Controllers\Controller
                 "name" => $item->name,
                 "symptoms" => $item->symptoms,
                 "verification" => optional($item->verification)->format("d.m.Y"),
-                "medication" => $item->medication,
                 "emergency_medication" => $item->emergency_medication,
                 "suspicion" => $item->suspicion
             ];

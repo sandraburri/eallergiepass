@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
     {{--
-        Here the care provider registers the allergies, intolerances and
-        incompatibilities of the affected person.
+        Here the care provider registers the allergies and intolerances
+        of the affected person.
     --}}
 
 @section('content')
@@ -45,28 +45,27 @@
         @if ($items)
 
         <div class="items-table-row header">
-            <div class="items-table-col type">{{$type == 'allergy' ? "Allergen" : "Typ"}}</div>
+            <div class="items-table-col type">{{$type == 'allergy' ? "Allergen" : "Auslöser"}}</div>
             <div class="items-table-col symptoms">Symptome</div>
-            <div class="items-table-col verification">Nachweis am</div>
+            <div class="items-table-col initialreaction">Erstreaktion am</div>
             <div class="items-table-col verified_by">Nachweis durch</div>
+            <div class="items-table-col verification">Nachweis am</div>
             <div class="items-table-col suspicion">Verdacht auf</div>
-            <div class="items-table-col medication">Medikation</div>
             <div class="items-table-col emergency_medication">Notfallmedikation</div>
             <div class="items-table-col actions"></div>
         </div>
 
         @foreach ($items as $item)
-        @include('includes.affectedItems-form', [
-            "type" => $type,
-            "item" => $item,
-            "verificationBy" => $verificationBy
-        ])
+            @include('includes.affectedItems-form', [
+                "type" => $type,
+                "item" => $item,
+                "verificationBy" => $verificationBy
+            ])
         @endforeach
         @endif
         @endforeach
 
     </div>
-
 
 </div>
 

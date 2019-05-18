@@ -12,7 +12,8 @@ class AffectedItem extends Model
     protected $table = 'affected_items';
 
     protected $casts = [
-        'verification' => 'date'
+        'verification' => 'date',
+        'initialreaction' => 'date'
     ];
 
     protected $rules = [

@@ -17,10 +17,10 @@ class AffectedItemsTableSeeder extends Seeder
             'type' => 'allergy',
             'name' => 'Bienengift',
             'symptoms' => 'Atemnot',
+            'initialreaction' => Carbon::parse('22.06.2018'),
             'verification' => Carbon::parse('22.06.2018'),
             'verified_by' => 'Klinik',
             'suspicion' => false,
-            'medication' => '',
             'emergency_medication' => 'Kortison'
         ]);
 
@@ -29,10 +29,10 @@ class AffectedItemsTableSeeder extends Seeder
             'type' => 'allergy',
             'name' => 'Wespengift',
             'symptoms' => 'Atemnot',
+            'initialreaction' => Carbon::parse('22.06.2018'),
             'verification' => Carbon::parse('22.06.2018'),
             'verified_by' => 'Klinik',
             'suspicion' => false,
-            'medication' => '',
             'emergency_medication' => 'Kortison'
         ]);
 
@@ -41,22 +41,22 @@ class AffectedItemsTableSeeder extends Seeder
             'type' => 'intolerance',
             'name' => 'Augmentin',
             'symptoms' => 'Hautrötungen',
+            'initialreaction' => Carbon::parse('22.06.2018'),
             'verification' => null,
             'verified_by' => '',
             'suspicion' => true,
-            'medication' => '',
             'emergency_medication' => ''
         ]);
 
         DB::table('affected_items')->insert([
             'affected_id' => 2,
-            'type' => 'incompatibility',
+            'type' => 'intolerance',
             'name' => 'Milch',
             'symptoms' => 'Übelkeit',
+            'initialreaction' => Carbon::parse('22.06.2018'),
             'verification' => null,
             'verified_by' => '',
             'suspicion' => true,
-            'medication' => '3x täglich Antihistaminikum',
             'emergency_medication' => ''
         ]);
     }

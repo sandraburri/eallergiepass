@@ -28,10 +28,10 @@ class AffectedItemsConverter
         $fhirSuspicion->setId(102);
         $fhirSuspicion->setValueString($item->suspicion);
 
-        $fhirMedication = new FHIRExtension();
-        $fhirMedication->setUrl("https://eallergiepass.ch/fhir/StructureDefinition/allergyIntolerance-medication");
-        $fhirMedication->setId(103);
-        $fhirMedication->setValueString($item->medication);
+        $fhirInitialreaction = new FHIRExtension();
+        $fhirInitialreaction->setUrl("https://eallergiepass.ch/fhir/StructureDefinition/allergyIntolerance-Initialreaction");
+        $fhirInitialreaction->setId(103);
+        $fhirInitialreaction->setValueString($item->Initialreaction);
 
         $fhirEmergencyMedication = new FHIRExtension();
         $fhirEmergencyMedication->setUrl("https://eallergiepass.ch/fhir/StructureDefinition/allergyIntolerance-emergency_medication");
@@ -56,7 +56,7 @@ class AffectedItemsConverter
         $fhirAllergyIntolerance->addReaction($fhirReaction);
         $fhirAllergyIntolerance->addExtension($fhirVerifiedBy);
         $fhirAllergyIntolerance->addExtension($fhirSuspicion);
-        $fhirAllergyIntolerance->addExtension($fhirMedication);
+        $fhirAllergyIntolerance->addExtension($fhirInitialreaction);
         $fhirAllergyIntolerance->addExtension($fhirEmergencyMedication);
 
         return $fhirAllergyIntolerance;

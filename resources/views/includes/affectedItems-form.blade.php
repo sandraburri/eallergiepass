@@ -21,14 +21,10 @@
             <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
         </div>
 
-        @php $fieldName = 'verification' @endphp
+        @php $fieldName = 'initialreaction' @endphp
         <div class="items-table-col {{$fieldName}}">
-            @if ($type != "incompatibility")
             <input type="date" class="form-control @if($errors->has($fieldName)) is-invalid @endif" name="{{$fieldName}}"
                 value="{{optional(old($fieldName, $item[$fieldName]))->format('Y-m-d')}}" />
-            @else
-            -
-            @endif
             <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
         </div>
 
@@ -37,16 +33,19 @@
         $oldValue = old($fieldName, $item[$fieldName]);
         @endphp
         <div class="items-table-col {{$fieldName}}">
-            @if ($type != "incompatibility")
             <select class="form-control @if($errors->has($fieldName)) is-invalid @endif" name="{{$fieldName}}">
                 <option value="">Bitte wählen ...</option>
                 @foreach ($verificationBy as $value)
                 <option value="{{$value}}" {{($oldValue == $value) ? 'selected' : ''}}>{{$value}}</option>
                 @endforeach
             </select>
-            @else
-            -
-            @endif
+            <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
+        </div>
+
+        @php $fieldName = 'verification' @endphp
+        <div class="items-table-col {{$fieldName}}">
+            <input type="date" class="form-control @if($errors->has($fieldName)) is-invalid @endif" name="{{$fieldName}}"
+                value="{{optional(old($fieldName, $item[$fieldName]))->format('Y-m-d')}}" />
             <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
         </div>
 
@@ -56,12 +55,6 @@
                 <input type="checkbox" class="form-check-input @if($errors->has($fieldName)) is-invalid @endif" name="{{$fieldName}}" value="1" {{old($fieldName, $item[$fieldName]) ? 'checked' : ''}} />
                 <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
             </div>
-        </div>
-
-        @php $fieldName = 'medication' @endphp
-        <div class="items-table-col {{$fieldName}}">
-            <textarea class="form-control @if($errors->has($fieldName)) is-invalid @endif" name="{{$fieldName}}">{{old($fieldName, $item[$fieldName])}}</textarea>
-            <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
         </div>
 
         @php $fieldName = 'emergency_medication' @endphp

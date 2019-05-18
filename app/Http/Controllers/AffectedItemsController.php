@@ -30,6 +30,8 @@ class AffectedItemsController extends Controller
             ->action('AffectedController@items', ['id' => $item->affected_id]);
     }
 
+
+
     public function store(Request $request)
     {
         $item = AffectedItem::where("id", $request->id)->first();
@@ -43,12 +45,15 @@ class AffectedItemsController extends Controller
         $verification = $request->verification;
         $verification = $verification == null ? null : Carbon::parse($verification);
 
+        $initialreaction = $request->initialreaction;
+        $initialreaction = $initialreaction == null ? null : Carbon::parse($initialreaction);
+
         $item->name = $request->name;
         $item->verification = $verification;
         $item->verified_by = $request->verified_by;
         $item->suspicion = $request->suspicion ? 1 : 0;
+        $item->initialreaction = $initialreaction;
         $item->symptoms = $request->symptoms;
-        $item->medication = $request->medication;
         $item->emergency_medication = $request->emergency_medication;
         $item->isValid();
 
