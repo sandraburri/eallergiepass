@@ -16,8 +16,17 @@
         height: 30px;
     }
 
-    .nav-link {
-        color: #fff;
+    .navbar-nav {
+
+        .nav-link.register {
+            color: #000;
+            font-weight: bold;
+
+            &:hover,
+            &:focus {
+                color: lighten(#000, 20%);
+            }
+        }
     }
 }
 
@@ -31,6 +40,7 @@ body {
     padding-bottom: 6rem;
     min-height: 100%;
 }
+
 
 .footer {
     position: absolute;

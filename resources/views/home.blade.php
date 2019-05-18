@@ -5,6 +5,7 @@
 
     @include('includes.care-provider-form', [
         "careProvider" => $careProvider,
+        "careProviderTitle" => $careProviderTitle,
         "address" => $address,
         "errors" => $errors
     ])
