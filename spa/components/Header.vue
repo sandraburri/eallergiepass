@@ -64,9 +64,10 @@
 
                 var routeNames = $nuxt._router.options.routes.map(route => route.path);
                 var currentPath = this.$route.fullPath;
+                var title = '';
 
                 if (currentPath != '/') {
-                    this.title = this.getTitle(currentPath);
+                    title = this.getTitle(currentPath);
 
                     let relativePath = '';
                     currentPath.split('/').forEach(path => {
@@ -87,6 +88,7 @@
                     });
                 }
 
+                this.title = title;
                 this.breadcrumbs = crumbs;
             },
 
