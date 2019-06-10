@@ -25,12 +25,12 @@
         @if ($errors->any())
             @if (AhvNumber::isValid($ahvNumber))
             <div class="alert alert-info">
-                Patient nicht gefunden. Wollen Sie einen neuen Patienten<br/>
+                Patient nicht gefunden. Wollen Sie einen neuen Patient<br/>
                 anlegen mit AHV-Nummer <code>{{$ahvNumber}}</code>?
                 <br/>
                 <br/>
                 <a href="{{action('AffectedController@create', ["ahv_number" => $ahvNumber])}}" class="btn btn-primary">
-                    Neuer Patient anlegen
+                    Neuen Patient anlegen
                 </a>
             </div>
             @endif

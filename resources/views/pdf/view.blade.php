@@ -58,7 +58,7 @@ $inner_style = "$align_top; width: " . $inner_width ."px; $border_right; padding
                     <br />
 
                     <div style="font-size: 8px; width: 100%; padding-right: 30px">
-                        a) Sie können den QR-Code mit einem beliebigen QR-Code-Scanner einlesen<br />
+                        a) Sie können den QR-Code mit einem beliebigen QR-Code Scanner einlesen<br />
                         b) Sie können in Ihrem Smartphone im Browser https://eallergiepass.ch eingeben
                     </div>
 

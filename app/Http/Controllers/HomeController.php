@@ -44,10 +44,10 @@ class HomeController extends Controller
             'careProvider' => $careProvider,
             'address' => $address,
             'careProviderTitle' => [
-                'Dr. med',
-                'Prof. Dr. med',
-                'med. pract',
-                'PD Dr. med'
+                'Dr. med.',
+                'Prof. Dr. med.',
+                'med. pract.',
+                'PD Dr. med.'
             ]
         ]
     );

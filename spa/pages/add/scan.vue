@@ -15,7 +15,7 @@ be taken to this page as well.
                 <fa :icon="['fas', 'camera']" />
             </div>
             <div class="content">
-                Scannen Sie den QR-Code auf Ihrem Allergiepass mit der Smartphone Kamera.
+                Scannen Sie den QR-Code auf Ihrem Allergiepass mit der Smartphone-Kamera.
             </div>
         </div>
 

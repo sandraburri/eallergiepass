@@ -21,7 +21,7 @@ CH-3000 Bern 22<br />
 <a href="https://www.aha.ch" target="_blank">www.aha.ch</a><br />
 <br />
 Allgemeiner Hinweis:<br />
-Ohne ausdrückliche schriftliche Genehmigung von Sandra Burri und Rebecca Scheidegger, darf nichts von eAllergiepass vervielfältigt oder übertragen werden, unabhängig davon, auf welche Art und Weise und mit welchen Mitteln (elektronisch oder mechanisch) dies geschieht.<br />
+Ohne ausdrückliche schriftliche Genehmigung von Sandra Burri und Rebecca Scheidegger darf nichts von eAllergiepass vervielfältigt oder übertragen werden, unabhängig davon, auf welche Art und Weise und mit welchen Mitteln (elektronisch oder mechanisch) dies geschieht.<br />
 Alle Rechte vorbehalten.
 </p>
     </section>
