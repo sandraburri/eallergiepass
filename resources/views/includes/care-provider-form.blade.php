@@ -109,7 +109,7 @@
             @php $fieldName = 'phone_number' @endphp
             <div class="form-group col-md-12">
                 <label for="{{$fieldName}}">Telefon</label>
-                <input type="text" class="form-control @if($errors->has($fieldName)) is-invalid @endif" name="{{$fieldName}}" value="{{old($fieldName)}}" placeholder="Telefon" />
+                <input type="text" class="form-control @if($errors->has($fieldName)) is-invalid @endif" name="{{$fieldName}}" value="{{old($fieldName)}}" placeholder="Telefon" data-phone-number />
                 <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
             </div>
         </div>

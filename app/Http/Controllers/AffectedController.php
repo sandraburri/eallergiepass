@@ -85,7 +85,7 @@ class AffectedController extends Controller
         if (!$user->save()) {
             return redirect()
                 ->route('home')
-                ->withErrors($address->getErrors())
+                ->withErrors($user->getErrors())
                 ->withInput();
         }
 
@@ -130,6 +130,8 @@ class AffectedController extends Controller
 
     public function store(Request $request)
     {
+        $input = $request->toArray();
+
         $affected = Affected::where("id", $request->affected_id)->first();
         if (!$affected) {
             return redirect()

@@ -124,6 +124,7 @@
                         name="{{$fieldName}}"
                         value="{{old($fieldName, $address[$fieldName])}}"
                         placeholder="Telefon"
+                        data-phone-number
                     />
                     <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
                 </div>
@@ -144,14 +145,18 @@
                     <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
                 </div>
 
-                @php $fieldName = 'birth_date' @endphp
+                @php
+                    $fieldName = 'birth_date';
+                    $value = optional(old($fieldName, $affected[$fieldName]))->format('Y-m-d')
+                @endphp
+
                 <div class="form-group col-md-6">
                     <label for="{{$fieldName}}">Geburtsdatum</label>
                     <input
                         type="date"
                         class="form-control @if($errors->has($fieldName)) is-invalid @endif"
                         name="{{$fieldName}}"
-                        value="{{optional(old($fieldName, $affected[$fieldName]))->format('Y-m-d')}}"
+                        value="{{$value}}"
                         placeholder="Geburtsdatum"
                     />
                     <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
@@ -160,8 +165,6 @@
 
             <input type="hidden" name="affected_id" value="{{$affected ? $affected->id : ''}}" />
             <input type="hidden" name="address_id" value="{{$address ? $address->id : ''}}" />
-
-
 
             @if ($address && $address->id)
             <button type="submit" class="btn btn-primary">
@@ -173,16 +176,12 @@
                 Weiter
             </button>
 
-
             @else
             <button type="submit" class="btn btn-primary">
                 <i class="fa fa-btn fa-save"></i>
                 Speichern
             </button>
             @endif
-
-
-
 
         </form>
 
