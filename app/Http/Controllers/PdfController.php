@@ -1,7 +1,5 @@
 <?php
 
-// This is the controller to ensure that the PDF is output correctly.
-
 namespace App\Http\Controllers;
 
 use Auth;

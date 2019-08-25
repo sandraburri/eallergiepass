@@ -1,8 +1,5 @@
 <?php
 
-// This is the controller so that the first view for the
-// care provider is displayed correctly.
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -29,8 +26,6 @@ class AffectedItemsController extends Controller
         return redirect()
             ->action('AffectedController@items', ['id' => $item->affected_id]);
     }
-
-
 
     public function store(Request $request)
     {
