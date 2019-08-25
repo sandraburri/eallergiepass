@@ -18,7 +18,7 @@
                 Allergiepass drucken
             </a>
             <a
-                href="{{action("MidataController@export", ["id" => $affected->id, "pretty" => "true"])}}"
+                href="{{action("EpdController@export", ["id" => $affected->id, "pretty" => "true"])}}"
                 class="btn btn-secondary ml-2"
             >
                 <i class="fa fa-btn fa-cloud-upload"></i>
