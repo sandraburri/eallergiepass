@@ -13,9 +13,9 @@
 
         <div class="form-row">
             @if ($address && $address->id)
-                <h2>Patient &laquo;{{$address->first_name}} {{$address->last_name}}&raquo; bearbeiten</h2>
+                <h2>Patienten &laquo;{{$address->first_name}} {{$address->last_name}}&raquo; bearbeiten</h2>
             @else
-                <h2>Patient erfassen</h2>
+                <h2>Patienten erfassen</h2>
             @endif
             </div>
 

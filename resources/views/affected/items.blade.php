@@ -9,7 +9,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-8">
-            <h2>Patient &laquo;{{$address->first_name}} {{$address->last_name}}&raquo; bearbeiten</h2>
+            <h2>Patienten &laquo;{{$address->first_name}} {{$address->last_name}}&raquo; bearbeiten</h2>
             <a
                 href="{{action("PdfController@index", ["id" => $affected->id])}}"
                 class="btn btn-primary"

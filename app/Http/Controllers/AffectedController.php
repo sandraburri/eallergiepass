@@ -121,7 +121,7 @@ class AffectedController extends Controller
         if (!$affected) {
             return redirect()
                 ->route('home')
-                ->withErrors(['ahv_number' => "Patient nicht gefunden"])
+                ->withErrors(['ahv_number' => "Patienten nicht gefunden"])
                 ->withInput();
         }
 

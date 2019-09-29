@@ -12,7 +12,7 @@
     <form method="GET" action="{{action('AffectedController@search')}}">
 
         <div class="form-row">
-            <h2>Patient suchen</h2>
+            <h2>Patienten suchen</h2>
         </div>
 
         @php
@@ -25,12 +25,12 @@
         @if ($errors->any())
             @if (AhvNumber::isValid($ahvNumber))
             <div class="alert alert-info">
-                Patient nicht gefunden. Wollen Sie einen neuen Patient<br/>
+                Patienten nicht gefunden. Wollen Sie einen neuen Patienten<br/>
                 anlegen mit AHV-Nummer <code>{{$ahvNumber}}</code>?
                 <br/>
                 <br/>
                 <a href="{{action('AffectedController@create', ["ahv_number" => $ahvNumber])}}" class="btn btn-primary">
-                    Neuen Patient anlegen
+                    Neuen Patienten anlegen
                 </a>
             </div>
             @endif
