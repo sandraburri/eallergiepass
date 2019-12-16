@@ -9,12 +9,11 @@ manual on his main view, he receives this emergency manual.
 
         <div class="form-help">
             1. Bitten Sie jemanden vor Ort um Hilfe <br />
-            2. Notruf alarmieren 144 <br />
+            2. Notruf alarmieren 144 oder 112<br />
             3. Ort sichern / sichern lassen <br />
-            4. Enge Kleider öffnen / ausziehen <br />
-            5. Wenn ansprechbar, die Person in eine angenehme Lage bringen <br />
-            6. Bei Bewusstlosigkeit, die Person in eine stabile Seitenlagerung bringen <br />
-            7. Wenn keine Atmung vorhanden, mit der Reanimation beginnen <br />
+            4. Wenn Person ansprechbar, sie in eine angenehme Lage bringen und falls notwendig enge Kleider öffnen / ausziehen<br />
+            5. Bei Bewusstlosigkeit, enge Kleider öffnen / ausziehen, die Person in eine stabile Seitenlage bringen <br />
+            6. Wenn keine Atmung oder Pus vorhanden, mit der Reanimation beginnen <br />
          </div>
     </section>
 </template>
