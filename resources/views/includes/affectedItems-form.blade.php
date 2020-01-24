@@ -21,10 +21,16 @@
             <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
         </div>
 
-        @php $fieldName = 'initialreaction' @endphp
+        @php
+            $fieldName = 'initialreaction';
+            $value = old($fieldName, $item[$fieldName]);
+            if ($value) {
+                $value = \Carbon\Carbon::parse($value)->format('Y-m-d');
+            }
+        @endphp
         <div class="items-table-col {{$fieldName}}">
             <input type="date" class="form-control @if($errors->has($fieldName)) is-invalid @endif" name="{{$fieldName}}"
-                value="{{optional(old($fieldName, $item[$fieldName]))->format('Y-m-d')}}" />
+                value="{{$value}}" />
             <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
         </div>
 
@@ -42,10 +48,16 @@
             <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
         </div>
 
-        @php $fieldName = 'verification' @endphp
+        @php
+            $fieldName = 'verification';
+            $value = old($fieldName, $item[$fieldName]);
+            if ($value) {
+                $value = \Carbon\Carbon::parse($value)->format('Y-m-d');
+            }
+        @endphp
         <div class="items-table-col {{$fieldName}}">
             <input type="date" class="form-control @if($errors->has($fieldName)) is-invalid @endif" name="{{$fieldName}}"
-                value="{{optional(old($fieldName, $item[$fieldName]))->format('Y-m-d')}}" />
+                value="{{$value}}" />
             <div class="invalid-feedback">{{$errors->first($fieldName)}}</div>
         </div>
 

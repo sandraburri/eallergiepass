@@ -147,7 +147,10 @@
 
                 @php
                     $fieldName = 'birth_date';
-                    $value = optional(old($fieldName, $affected[$fieldName]))->format('Y-m-d')
+                    $value = old($fieldName, $affected[$fieldName]);
+                    if ($value) {
+                        $value = \Carbon\Carbon::parse("$value")->format('Y-m-d');
+                    }
                 @endphp
 
                 <div class="form-group col-md-6">
