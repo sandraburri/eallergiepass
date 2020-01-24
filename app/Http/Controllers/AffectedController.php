@@ -18,6 +18,9 @@ class AffectedController extends Controller
     {
         $affected = Affected::where("id", $id)->first();
         $address = Address::where("user_id", $affected->user_id)->first();
+        if (!$address) {
+            $address = new Address();
+        }
 
         return view('affected/view', [
             'affected' => $affected,
@@ -34,6 +37,7 @@ class AffectedController extends Controller
             'allergy' => [],
             'intolerance' => []
         ];
+
         foreach (AffectedItem::where("affected_id", $affected->id)->get() as $item)
         {
             array_push($affectedItems[$item->type], $item);
