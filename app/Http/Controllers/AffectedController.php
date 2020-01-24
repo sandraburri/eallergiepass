@@ -60,6 +60,11 @@ class AffectedController extends Controller
                 'Zelluläre Teste'
             ]
         ]);
+
+
+        $hash = [
+            'SNO-1234' => 'Anamnese'
+        ];
     }
 
     public function create(Request $request)
