@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAllergensTable extends Migration
+class CreateAllergySubstancesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateAllergensTable extends Migration
      */
     public function up()
     {
-        Schema::create('allergens', function (Blueprint $table) {
+        Schema::create('allergy_substances', function (Blueprint $table) {
             $table->bigIncrements('id');
-            
-            $table->string('type'); // Nur zu Übungszwecken, nachher wieder löschen!
             $table->timestamps();
-
-            //Daten werden von FHIR geholt und hier abgespitzt
+            $table->string('name_en');
+            $table->string('name_de');
         });
     }
 
@@ -30,6 +28,6 @@ class CreateAllergensTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('allergens');
+        Schema::dropIfExists('allergy_substances');
     }
 }

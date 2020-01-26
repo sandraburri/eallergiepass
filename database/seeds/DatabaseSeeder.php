@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
         $this->call(AddressesTableSeeder::class);
         $this->call(AffectedTableSeeder::class);
         $this->call(AffectedItemsTableSeeder::class);
-        $this->call(AllergensTableSeeder::class);
+        $this->call(AllergySubstancesTableSeeder::class);
+        $this->call(AllergiesTableSeeder::class);
 
         // when adding a new class here, execute
         // composer dump-autoload
