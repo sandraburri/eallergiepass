@@ -20,8 +20,7 @@ class IntolerancesTableSeeder extends Seeder
             'initialreaction' => Carbon::parse('22.06.2018'),
             'verification' => Carbon::parse('22.06.2018'),
             'verified_by' => 'Klinik',
-            'suspicion' => false,
-            'emergency_medication' => 'Kortison'
+            'suspicion' => false
         ]);
 
         DB::table('intolerances')->insert([
@@ -31,8 +30,7 @@ class IntolerancesTableSeeder extends Seeder
             'initialreaction' => Carbon::parse('22.06.2018'),
             'verification' => Carbon::parse('22.06.2018'),
             'verified_by' => 'Klinik',
-            'suspicion' => false,
-            'emergency_medication' => 'Kortison'
+            'suspicion' => false
         ]);
     }
 }
