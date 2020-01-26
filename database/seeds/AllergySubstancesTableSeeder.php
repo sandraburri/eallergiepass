@@ -18,7 +18,7 @@ class AllergySubstancesTableSeeder extends Seeder
         $this->insert(256440004, 'Wasp venom', 'Wespengift');
         $this->insert(13577000, 'Nut', 'Nuss');
         $this->insert(256353000, 'Hazelnut', 'Haselnuss');
-        $this->insert(256277009, 'Grass pollen', 'Grasspollen');
+        $this->insert(256277009, 'Grass pollen', 'Graspollen');
         $this->insert(782576004, 'Tree pollen', 'Baumpollen');
         $this->insert(276310004, 'Animal hair', 'Tierhaar');
         $this->insert(735215001, 'Apple', 'Apfel');

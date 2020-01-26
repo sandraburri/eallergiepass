@@ -15,9 +15,9 @@ class CreateAllergySubstancesTable extends Migration
     {
         Schema::create('allergy_substances', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
             $table->string('name_en');
             $table->string('name_de');
+            $table->timestamps();
         });
     }
 

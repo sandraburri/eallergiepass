@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAffectedItemsTable extends Migration
+class CreateIntolerancesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,15 @@ class CreateAffectedItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('affected_items', function (Blueprint $table) {
+        Schema::create('intolerances', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('affected_id');
-            $table->string('type');
-            $table->string('name')->nullable();
+            $table->string('intolerance_substances_id')->nullable();
             $table->date('verification')->nullable();
             $table->date('initialreaction')->nullable();
             $table->string('verified_by')->nullable();
             $table->boolean('suspicion')->default(false);
-            $table->string('symptoms')->nullable();
-            $table->string('emergency_medication')->nullable();
+            $table->string('symptoms_id')->nullable();
             $table->timestamps();
 
             $table->foreign('affected_id')->references('id')->on('affected');
@@ -37,6 +35,6 @@ class CreateAffectedItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('affected_items');
+        Schema::dropIfExists('intolerances');
     }
 }
