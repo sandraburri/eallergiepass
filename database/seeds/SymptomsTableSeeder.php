@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Symptoms;
+use App\Symptom;
 
 class SymptomsTableSeeder extends Seeder
 {
@@ -34,7 +34,13 @@ class SymptomsTableSeeder extends Seeder
         $this->insert(699376002, 'Lip Swelling', 'Geschwollene Lippen');
         $this->insert(130987000, 'Acute confusion', 'Verwirrung');
         $this->insert(76067001,	'Sneezing', 'Niesen');
-
-        
+       
+    }
+    private function insert($id, $name_en, $name_de) {
+        DB::table('symptoms')->insert([
+            'id' => $id,
+            'name_en' => $name_en,
+            'name_de' => $name_de
+        ]);
     }
 }
