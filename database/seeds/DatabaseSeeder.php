@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(IntolerancesTableSeeder::class);
         $this->call(IntoleranceSubstancesTableSeeder::class);
         $this->call(SymptomsTableSeeder::class);
+        $this->call(DisciplinesTableSeeder::class);
 
         // when adding a new class here, execute
         // composer dump-autoload
